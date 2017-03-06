@@ -1,0 +1,15 @@
+$(function(){
+	$("#login form").submit(function(){
+		var login = $("#pseudo form input").val();
+		
+		$.post(url, {action:"login", login:login}, function(data){
+			if(data.erreur == "ok"){
+				alert("ok")
+			}
+			else{
+				alert("KO");
+			}
+
+		},"json");
+	})
+});

@@ -1,11 +1,18 @@
 <?php
 
 include "connexion.php";
-include "Questions.php";
-include "Users.php";
+include "tchat.php";
 
-print_r(get_password_user(5));
+echo "toto";
+$select = "SELECT * FROM tchat WHERE id_message > 46 ORDER BY id_message ASC";
+print_r($select);
+	$res = pg_query($dbconnect, $select);
+$test = pg_fetch_row($res);
 
+	print_r($test);
+?>
+
+<?php
 
 /*
 Question and upvote:
@@ -22,5 +29,9 @@ get_nb_upvote_question OK
 /*
 
 Users:
+
 insert_user OK
 get_mail_user OK
+get_firstname_user OK
+get_lastname OK
+get_password OK

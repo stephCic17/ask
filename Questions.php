@@ -66,7 +66,7 @@ function get_id_who_ask($id_q){
 	$result = pg_query($dbconnect, $select);
 	$id_ask = pg_fetch_row($result);
 
-	return $id_ask;
+	return $id_ask[0];
 }
 
 
