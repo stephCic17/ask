@@ -2,14 +2,11 @@
 
 include "connexion.php";
 include "tchat.php";
+include "user/Users.php";
 
 echo "toto";
-$select = "SELECT * FROM tchat WHERE id_message > 46 ORDER BY id_message ASC";
-print_r($select);
-	$res = pg_query($dbconnect, $select);
-$test = pg_fetch_row($res);
+print_r(get_id_user("toto"));
 
-	print_r($test);
 ?>
 
 <?php

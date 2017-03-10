@@ -1,7 +1,4 @@
-
 <?php
-include "../connexion.php";
-include "tchat.php";
 session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -12,29 +9,16 @@ session_start();
 		<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" />
 
 <script type="text/javascript" src="../ressources/jquery.js"></script>
-<script type="text/javascript" src="tchat.js"></script>
-<script type="text/javascript">
-<?php
-			 $data =  get_last_message();
- ?>
-var lastid = <?php echo $data; ?>
-</script>
+<script type="text/javascript" src="user.js"></script>
+
 </head>
 	<body>
 		<div id="contener">
-			<h1> Tchat</h1>
-			<div id="tchat">
-
-	<?php
-	$msg = get_all_message();
-				foreach ($msg as $val)
-				echo $val;
-				?>
-			</div>
-			<div id="tchatForm">
+			<h1> Pseudo Deja utilise</h1>
+			<div id="UserForm">
 				<form method="post" action="#">
 					
-					<textarea name="message"></textarea>
+					<input type="text"  name="login" />
 				<input type="submit" value="enter"/>
 			</div>
 	</body>

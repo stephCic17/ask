@@ -1,12 +1,15 @@
 <?php
 include "../connexion.php";
 include "tchat.php";
+include "../user/Users.php";
+
+session_start();
 
 $d = array();
 
 extract ($_POST);
 if ($_POST["action"] == "addMessage"){
-	insert_message(1,$message);
+	insert_message($_SESSION["id"],$message);
 	$d["erreur"] = "ok";
 }
 
@@ -16,7 +19,7 @@ if ($_POST["action"] == "getMessage"){
 	$d["result"] = "";
 	$d["lastid"] = $lastid;
 	while (($msg = pg_fetch_row($res))){
-		$d["result"] .= '<b>'.$msg[1].':'.$msg[2].'</b><br />';
+		$d["result"] .= '<b>'.get_pseudo_user($msg[1]).':'.$msg[2].'</b><br />';
 		$d["lastid"] = $msg[0];
 	}
 	$d["erreur"] = "ok";

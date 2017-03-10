@@ -1,17 +1,20 @@
 var url="userAjax.php";
 
 $(function(){
-	$("#login form").submit(function(){
-		var login = $("#login form input").val();
-		$.post(url, {action:"Testlogin", login:login}, function(data){
-			alert(data.erreur);
+	$("#UserForm form").submit(function(){
+		var login = $("#UserForm form input").val();
+		$.post(url, {action:"TestPseudo", login:login}, function(data){
 			if(data.erreur == "ok"){
-				
+				alert("ok");
 			}
 			else{
 				alert("KO");
 			}
 
 		},"json");
+		
+
+
 	})
 });
+
