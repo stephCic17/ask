@@ -4,6 +4,7 @@ include "connexion.php";
 include "tchat/tchat.php";
 include "user/Users.php";
 include "question/Questions.php";
+
 session_start();
 
 ?>
@@ -66,22 +67,31 @@ session_start();
 			</form>
 		</div>
 
-		<h2> Tchat</h2>
-		<div class="tchatF">
-				<div id="tchatForm">
-				<form method="post" action="#">
-					<textarea name="message"></textarea>
-					<input type="submit" value="enter"/>
-			</div>
+														
 
-		<div id="tchat" class="tchatF">
-			<?php
-				$msg = get_all_message();
-				print_r($msg[0]);
-				foreach ($msg as $val)
-				echo $val;
-					?>
-			</div>
-</div>
+
+														
+														<h1> Tchat</h1>
+														
+														<div class="tchatF">
+<div id="tchatForm">
+														<form method="post" action="#">
+<?php print_r($_SESSION);					?>
+														<textarea name="message"></textarea>
+														<input type="submit" value="enter"/>
+														</div>
+														<div id="tchat">
+
+
+
+														<?php
+														$msg = get_all_message();
+														foreach ($msg as $val)
+															echo $val;
+														?>
+														</div>
+
+
+
 		</body>
 		

@@ -1,6 +1,6 @@
 <?php
 function insert_message($id_user, $message){
-	include "../connexion.php";
+	include "connexion.php";
 
 	$insert = "INSERT INTO tchat(id_user, message) VALUES ('$id_user', '$message')";
 	$result = pg_query($dbconnect, $insert);
@@ -19,7 +19,7 @@ function get_last_message(){
 }
 
 function get_all_message(){
-	include "../connexion.php";
+	include "connexion.php";
 	include "../user/Users.php";
 		
 	$allmsg = "SELECT * FROM tchat ORDER BY id_message DESC LIMIT 30";
@@ -29,10 +29,5 @@ function get_all_message(){
 	while(($msg = pg_fetch_row($res))){
 		$data[$i++] .= '<b>'.get_pseudo_user($msg[1]).':'.$msg[2].'</b><br />';
 	}
-	$j = 0;
-	$i = count($data);
-	while ($i > -1){
-		$msg[$j++] = $data[$i--];
-	}
-	return $msg;
+	return $data;
 }

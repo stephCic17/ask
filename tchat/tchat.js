@@ -6,7 +6,7 @@ $(function(){
 	$("#tchatForm form").submit(function(){
 		var message = $("#tchatForm form textarea").val();
 		$.post(url, {action:"addMessage", message:message}, function(data){
-			console.log(data);
+			console.log(data.erreur);
 			if(data.erreur == "ok"){
 				getMessage();
 				$("#tchatForm form textarea").val("");

@@ -44,7 +44,8 @@ function test_password_user($id_user, $passwordtest){
 		return 0;
 }
 function get_pseudo_user($id_user){
-	include "../connexion.php";
+	//include "../connexion.php";
+	include "./connexion.php";
 	session_start();
 		
 	$select = "SELECT login FROM users WHERE id_user='$id_user'";
@@ -84,6 +85,7 @@ function test_pseudo($pseudo){
 
 function get_id_user($pseudo){
 	include "../connexion.php";
+	include "connexion.php";
 
 	$select = "SELECT id_user FROM users WHERE login = '$pseudo'";
 	$result = pg_query($dbconnect, $select);
