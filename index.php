@@ -65,7 +65,7 @@ session_start();
 			</form>
 		</div>
 		<h1> Tchat</h1>
-		<div class="tchatF">
+		<div id="tchatF">
 
 			<div id="tchat">
 				<?php
@@ -73,11 +73,17 @@ session_start();
 				foreach ($msg as $val)
 				echo $val;
 				?>
-			</div>
+
 			<div id="tchatForm">
 				<form method="post" action="#">
 					<textarea name="message"></textarea>
 					<input type="submit" value="enter"/>
 			</div>
+			</div>
+			<script>
+			var x = document.getElementById('tchatF');
+			x.scrollTop = x.scrollHeight;
+			</script>
+
 	</body>
 		
