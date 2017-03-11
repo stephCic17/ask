@@ -25,7 +25,7 @@ $(function(){
 function getMessage(){
 	$.post(url, {action:"getMessage", lastid:lastid}, function(data){
 		if(data.erreur=="ok"){
-			$("#tchat").unshift(data.result)
+			$("#tchat").append(data.result)
 			lastid=data.lastid;
 			}
 			else{

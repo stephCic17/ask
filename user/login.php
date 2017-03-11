@@ -17,11 +17,11 @@ if (test_pseudo($pseudo) == 1){
 		echo "<script> document.location.href=\"http://ciconia.io/ask\"</script>";
 	}
 	else{
-		echo "<script> document.location.href=\"http://ciconia.io/ask\"</script>";
+		echo "KOici";
 	}
 }
 	else
-		echo "<script> document.location.href=\"http://ciconia.io/ask\"</script>";
+		echo "KO";
 	
 
 ?>

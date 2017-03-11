@@ -29,10 +29,5 @@ function get_all_message(){
 	while(($msg = pg_fetch_row($res))){
 		$data[$i++] .= '<b>'.get_pseudo_user($msg[1]).':'.$msg[2].'</b><br />';
 	}
-	$j = 0;
-	$res = array();
-	$i = count($data) -1;
-	while ($i >= -1)
-		$res[$j++] = $data[$i--]; 
-	return $res;
+	return $data;
 }

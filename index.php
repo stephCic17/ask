@@ -8,10 +8,11 @@ include "question/Questions.php";
 session_start();
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"/>
 	<head>
-
+	<meta http-equiv="Content-Type" content="text/html"/>
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="css/popup.css" type="text/css" media="screen" />
 		<script type="text/javascript" src="ressources/jquery.js"></script>
@@ -64,26 +65,31 @@ session_start();
 				<input type="submit" value="ok">
 			</form>
 		</div>
-		<h1> Tchat</h1>
-		<div id="tchatF">
 
-			<div id="tchat">
-				<?php
-				$msg = get_all_message();
-				foreach ($msg as $val)
-				echo $val;
-				?>
+														
 
-			<div id="tchatForm">
-				<form method="post" action="#">
-					<textarea name="message"></textarea>
-					<input type="submit" value="enter"/>
-			</div>
-			</div>
-			<script>
-			var x = document.getElementById('tchatF');
-			x.scrollTop = x.scrollHeight;
-			</script>
 
-	</body>
+														
+														<h1> Tchat</h1>
+														
+														<div class="tchatF">
+<div id="tchatForm">
+														<form method="post" action="#">
+														<textarea name="message"></textarea>
+														<input type="submit" value="enter"/>
+														</div>
+														<div id="tchat">
+
+
+
+														<?php
+														$msg = get_all_message();
+														foreach ($msg as $val)
+															echo $val;
+														?>
+														</div>
+
+
+
+		</body>
 		
