@@ -29,7 +29,7 @@ function getMessage(){
 			lastid=data.lastid;
 			}
 			else{
-				alert("KO");
+
 			}
 
 			

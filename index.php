@@ -1,34 +1,87 @@
 <?php
 
 include "connexion.php";
-include "tchat.php";
+include "tchat/tchat.php";
 include "user/Users.php";
-
-echo "toto";
-print_r(get_id_user("toto"));
+include "question/Questions.php";
+session_start();
 
 ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"/>
+	<head>
+		<title>Ciconia</title>
+	<meta http-equiv="Content-Type" content="text/html"/>
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/popup.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="ressources/jquery.js"></script>
+		<script type="text/javascript" src="tchat/tchat.js"></script>
+		<script type="text/javascript" src="user/user.js"></script>
+		<script type="text/javascript" src="user/popup.js"></script>
 
-<?php
+		<script type="text/javascript">
+		<?php
+		 $data =  get_last_message();
+		 ?>
+		 var lastid = <?php echo $data; ?>;
+		 var popupActive = 0;
+		</script>
 
-/*
-Question and upvote:
+	</head>
+	<body>
+		<nav id='nav'>
+			<div class="container">
+				<ul>
+					<li><a href="" id="logo" ui-sref="nav.home"><img src="assets/imgs/jpg/CiconiaLogo.png" width="150px"/></a></li>
+					<li><?php if (!$_SESSION["pseudo"]){?><a href="#" onClick="loadInscription()" class="cta touch button half-right -big -round -line-grey-lighten-5">S'inscrire</a><?php } ?></li>
+					<li><?php if (!$_SESSION["pseudo"]){?><a href="#" onClick="loadConnect()" class="cta touch button half-right -big -round -line-grey-lighten-5">Se Connecter</a>
+						<?php }
+						else{?>
+						<a href="user/disconnect.php"  class="cta touch button half-right -big -round -line-grey-lighten-5">Se Deconnecter</a><?php } ?></li>
+					<li><a id="link" ui-sref-active="active" class="uppercase center">Live</a></li>
+					<li><a id="link" ui-sref-active="active" ui-sref="nav.home" class="uppercase center">Accueil</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="popupConnect">
+			<h2>Se Connecter</h2>
+			<a href="#" onclick="closeConnect()">X</a>
+			<form method="post" action="user/login.php">
+				<input type="text" name="pseudo" placeholder="login"/>
+				<input type="password" name="password" placeholder="password"/>
+				<input type="submit" value="ok">
+			</form>
+		</div>
+		<div class="popupInscription">
+			<a href="#" onclick="closeInscription()">X</a>
+			<h2>S'inscrire</h2>
+			<form method="post" action="user/create_account.php">
+				<input type="text" name="first" placeholder="firstname">
+				<input type="text" name="last" placeholder="lastname">
+				<input type="email" name="mail" placeholder="mail">
+				<input type="text" name="pseudo" placeholder="login"/>
+				<input type="password" name="password" placeholder="password"/>
+				<input type="submit" value="ok">
+			</form>
+		</div>
 
-insert_question OK
-insert_upvote OK miss insert upvote to user
-insert_upvote_question_no_user OK
-get_last_question OK
-get_question OK
-get_nb_upvote_question OK
+		<h2> Tchat</h2>
+		<div class="tchatF">
+				<div id="tchatForm">
+				<form method="post" action="#">
+					<textarea name="message"></textarea>
+					<input type="submit" value="enter"/>
+			</div>
 
-*/
-
-/*
-
-Users:
-
-insert_user OK
-get_mail_user OK
-get_firstname_user OK
-get_lastname OK
-get_password OK
+		<div id="tchat" class="tchatF">
+			<?php
+				$msg = get_all_message();
+				print_r($msg[0]);
+				foreach ($msg as $val)
+				echo $val;
+					?>
+			</div>
+</div>
+		</body>
+		

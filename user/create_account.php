@@ -14,7 +14,7 @@ if (test_pseudo($pseudo) == 0){
 		$_SESSION["fisrt"] = $first;
 		$_SESSION["mail"] = $mail;
 		$_SESSION["password"] = $password;
-
+	echo "	<script> document.location.href=\"http://ciconia.io/ask\"</script>";
 }
 else {
 	$_SESSION["last"] = $last;

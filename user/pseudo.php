@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -14,10 +15,12 @@ session_start();
 </head>
 	<body>
 		<div id="contener">
+			<?php if ($_SESSION["pseudo"]){
+				echo "<script> document.location.href=\"http://ciconia.io/ask\"</script>";}?>
 			<h1> Pseudo Deja utilise</h1>
 			<div id="UserForm">
 				<form method="post" action="#">
-					
+
 					<input type="text"  name="login" />
 				<input type="submit" value="enter"/>
 			</div>

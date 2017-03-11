@@ -31,14 +31,17 @@ function get_firstname_user($id_user){
 	return $firstname[0];
 }
 
-function get_password_user($id_user){
+function test_password_user($id_user, $passwordtest){
 	include "../connexion.php";
 
-	$select = "SELECT password FROM users WHERE id_user='$id_user'";
+	$select = "SELECT * FROM users WHERE id_user='$id_user'";
 	$result = pg_query($dbconnect, $select);
 	$password = pg_fetch_row($result);
-
-	return $password[0];
+	$pass = hash('whirlpool', $password[5].$passwordtest);
+	if($pass == $password[7])
+		return 1;
+	else
+		return 0;
 }
 function get_pseudo_user($id_user){
 	include "../connexion.php";

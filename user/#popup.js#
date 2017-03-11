@@ -1,0 +1,31 @@
+function load(){
+	if (popupActive == 0){
+		$('.background').css({
+			"opacity":"0.6"
+		});
+		$('.background').fadeIn('slow');
+		$('.popup').fadeIn('slow');
+		popupActive = 1;
+	}
+}
+
+$(document).ready(function(){
+	$('.function load(){
+if (popupActive == 0){
+$('.background').css({
+"opacity":"0.6"
+});
+$('.background').fadeIn('slow');
+$('.popup').fadeIn('slow');
+popupActive = 1;
+}
+}
+
+$(document).ready(function(){
+$('.btn').click(function(){
+load();
+})
+});').click(function(){
+		load();
+	})
+});
