@@ -1,4 +1,4 @@
-var url="user/userAjax.php";
+var url="userAjax.php";
 var popupActive = 0;
 
 $(function(){

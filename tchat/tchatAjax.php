@@ -6,10 +6,12 @@ include "../user/Users.php";
 session_start();
 
 $d = array();
-
+$d["erreur"] = "toto";
 extract ($_POST);
+if ($_POST){
 if ($_POST["action"] == "addMessage"){
-	insert_message($_SESSION["id"],$message);
+
+	$d["test"] = insert_message($_SESSION["id"],$message);
 	$d["erreur"] = "ok";
 }
 
@@ -25,4 +27,5 @@ if ($_POST["action"] == "getMessage"){
 	$d["erreur"] = "ok";
 }
 echo json_encode($d);
+}
 ?>

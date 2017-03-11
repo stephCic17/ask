@@ -4,7 +4,7 @@ function insert_message($id_user, $message){
 
 	$insert = "INSERT INTO tchat(id_user, message) VALUES ('$id_user', '$message')";
 	$result = pg_query($dbconnect, $insert);
-	
+	return $result;
 }
 
 
