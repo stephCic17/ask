@@ -1,3 +1,5 @@
+var popupActive = 0;
+
 function loadConnect(){
 	if (popupActive == 0){
 		$('.popupConnect').fadeIn('slow');

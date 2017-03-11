@@ -1,4 +1,4 @@
-var url="tchatAjax.php";
+var url="tchat/tchatAjax.php";
 var lastid=0;
 var timer = setInterval(getMessage,5000);
 
@@ -25,7 +25,7 @@ $(function(){
 function getMessage(){
 	$.post(url, {action:"getMessage", lastid:lastid}, function(data){
 		if(data.erreur=="ok"){
-			$("#tchat").append(data.result)
+			$("#tchat").apend(data.result)
 			lastid=data.lastid;
 			}
 			else{

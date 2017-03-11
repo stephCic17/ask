@@ -44,8 +44,8 @@ function test_password_user($id_user, $passwordtest){
 		return 0;
 }
 function get_pseudo_user($id_user){
-	//include "../connexion.php";
-	include "./connexion.php";
+	include "../connexion.php";
+	include "connexion.php";
 	session_start();
 		
 	$select = "SELECT login FROM users WHERE id_user='$id_user'";

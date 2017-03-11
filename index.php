@@ -12,7 +12,6 @@ session_start();
 		  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"/>
 	<head>
-
 	<meta http-equiv="Content-Type" content="text/html"/>
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="css/popup.css" type="text/css" media="screen" />

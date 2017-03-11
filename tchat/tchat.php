@@ -1,6 +1,6 @@
 <?php
 function insert_message($id_user, $message){
-	include "connexion.php";
+	include "../connexion.php";
 
 	$insert = "INSERT INTO tchat(id_user, message) VALUES ('$id_user', '$message')";
 	$result = pg_query($dbconnect, $insert);
