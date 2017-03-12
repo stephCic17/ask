@@ -1,11 +1,11 @@
 <?php
 
-function insert_question($id_user, $question){
-	include "connexion.php";
+function insert_question($id_user, $question, $id_session){
+	include "../connexion.php";
 
-	$insert = "INSERT INTO questions (id_user, question, upvote) VALUES ('$id_user', '$question', '0')";
+	$insert = "INSERT INTO questions (id_user, question, upvote, id_session) VALUES ('$id_user', '$question', '0', '$id_session')";
 	$result = pg_query($dbconnect, $insert);
-
+	return $insert;
 }
 
 function insert_upvote($id_user, $id_q){

@@ -7,7 +7,12 @@ session_start();
 
 $d = array();
 extract ($_POST);
-$d["erreur"] = "toto";
+
+if ($_POST["action"] == "addQuestion"){
+	$d["test"] = insert_question($_SESSION["id"], $question, 1);
+	$d["erreur"] = "ok";
+}
+
 if ($_POST["action"] == "addUpvote"){
 
 	$d["test"] = insert_upvote($_SESSION["id"],$id);

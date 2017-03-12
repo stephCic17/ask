@@ -91,10 +91,15 @@ session_start();
 				$i = 0;
 				while ($question[$i]["id"] > 0)
 				{
-					print_r("toto");
 					echo "<div id=".$question[$i]["id"]."><p>".$question[$i]["question"]." upvote ".$question[$i]["upvote"]."<a href=\"#\" onclick=\"upvote(".$question[$i++]["id"].")\"><i class=\"icon -chevron-up\"></i></a></div>";
 				}
 				?>
+			</div>
+			<div id="questionForm">
+				<form method="post" action="#">
+					<textarea name="question"></textarea>
+					<input type="submit" value="enter"/>
+				</form>
 			</div>
 		</div>
 	</body>

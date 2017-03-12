@@ -18,6 +18,14 @@ $(function(){
 			}
 		},"json");
 	})
+	$("#questionForm form").submit(function(){
+		var question = $("#questionForm form textarea").val();
+		$.post(url2, {action:"addQuestion", question:question}, function(data){
+			if(data.erreur == "ok"){
+
+			}
+		},"json");
+	})
 });
 
 function getMessage(){
@@ -46,7 +54,6 @@ function upvote(id){
 		}
 	}, "json");
 	return false;
-	alert("toto");
 }
 function reloadDiv(data){
 	document.getElementById('affQ').innerHTML = data;
