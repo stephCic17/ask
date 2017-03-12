@@ -4,7 +4,6 @@ function insert_message($id_user, $message){
 
 	$insert = "INSERT INTO tchat(id_user, message) VALUES ('$id_user', '$message')";
 	$result = pg_query($dbconnect, $insert);
-	return $result;
 }
 
 
@@ -29,5 +28,10 @@ function get_all_message(){
 	while(($msg = pg_fetch_row($res))){
 		$data[$i++] .= '<b>'.get_pseudo_user($msg[1]).':'.$msg[2].'</b><br />';
 	}
+	$i = count($data)-1;
+	$j = 0;
+	while ($i < -1)
+		$ok[$j++] = $data[$i--];
+
 	return $data;
 }
