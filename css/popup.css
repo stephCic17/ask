@@ -36,18 +36,28 @@
 	left:0;
 	background:#000000;	   
 }
-.tchatF{
+#tchatF{
 	margin-top:10%;
 	margin-right:2%;
 	padding:2% 2% 2% 2%;
 	float:right;
+	position:relative;
 	max-width:100%;
 	max-height: 40%;
-	overflow-x : scroll;
-		overflow-x : hidden;
+	overflow-x : hidden;
 	background-color: rgba(0,0,0,0.2);
+	display:inline-block;
 }
 textarea{
 	width:90%;
 	text-align:center;
+}
+#questionF{
+	padding:2% 2% 2% 2%;
+	max-width:100%;
+
+	max-height: 40%;
+	overflow-x : hidden;
+	background-color: rgba(0,0,0,0.2);
+	display:inline-block;
 }

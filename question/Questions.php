@@ -9,13 +9,13 @@ function insert_question($id_user, $question){
 }
 
 function insert_upvote($id_user, $id_q){
-	include "connexion.php";
+	include "../connexion.php";
 	
 	$insert = "INSERT INTO upvotes (id_user, id_q) VALUES ($id_user, $id_q)";
 	$result	= pg_query($dbconnect, $insert);
-
 	$insert = "UPDATE questions SET upvote=upvote+1 WHERE id_q='$id_q'"; 
 	$result = pg_query($dbconnect, $insert);
+	return $insert;
 
 }
 
@@ -46,6 +46,23 @@ include "connexion.php";
 	$question = pg_fetch_row($result);
 
 	return $question[0];
+
+}
+function get_all_question($id_session){
+include "connexion.php";
+include "../connexion.php";
+
+	$select = "SELECT * FROM questions WHERE id_session='$id_session ' ORDER BY upvote DESC";
+	$result = pg_query($dbconnect, $select);
+	$quest = array();
+	$i = 0;
+	while($question = pg_fetch_row($result)){
+		$quest[$i]["id"] = $question[0];
+		$quest[$i]["question"] = $question[2];
+		$quest[$i++]["upvote"] = $question[3];
+	}
+
+	return $quest;
 
 }
 

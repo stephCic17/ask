@@ -5,8 +5,9 @@ include "tchat/tchat.php";
 include "user/Users.php";
 include "question/Questions.php";
 
-session_start();
 
+session_start();
+				$msg = get_all_message();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 		  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -19,6 +20,7 @@ session_start();
 		<script type="text/javascript" src="tchat/tchat.js"></script>
 	
 		<script type="text/javascript" src="user/popup.js"></script>
+				<script type="text/javascript" src="question/question.js"></script>
 
 		<script type="text/javascript">
 		<?php
@@ -30,20 +32,21 @@ session_start();
 
 	</head>
 	<body>
-		<nav id='nav'>
+				<nav id='nav'>
 			<div class="container">
 				<ul>
 					<li><a href="" id="logo" ui-sref="nav.home"><img src="assets/imgs/jpg/CiconiaLogo.png" width="150px"/></a></li>
 					<li><?php if (!$_SESSION["pseudo"]){?><a href="#" onClick="loadInscription()" class="cta touch button half-right -big -round -line-grey-lighten-5">S'inscrire</a><?php } ?></li>
 					<li><?php if (!$_SESSION["pseudo"]){?><a href="#" onClick="loadConnect()" class="cta touch button half-right -big -round -line-grey-lighten-5">Se Connecter</a>
-						<?php }
-						else{?>
+					<?php }
+					else{?>
 						<a href="user/disconnect.php"  class="cta touch button half-right -big -round -line-grey-lighten-5">Se Deconnecter</a><?php } ?></li>
 					<li><a id="link" ui-sref-active="active" class="uppercase center">Live</a></li>
 					<li><a id="link" ui-sref-active="active" ui-sref="nav.home" class="uppercase center">Accueil</a></li>
 				</ul>
 			</div>
 		</nav>
+
 		<div class="popupConnect">
 			<h2>Se Connecter</h2>
 			<a href="#" onclick="closeConnect()">X</a>
@@ -65,31 +68,36 @@ session_start();
 				<input type="submit" value="ok">
 			</form>
 		</div>
-
-														
-
-
-														
-														<h1> Tchat</h1>
-														
-														<div class="tchatF">
-<div id="tchatForm">
-														<form method="post" action="#">
-														<textarea name="message"></textarea>
-														<input type="submit" value="enter"/>
-														</div>
-														<div id="tchat">
-
-
-
-														<?php
-														$msg = get_all_message();
-														foreach ($msg as $val)
-															echo $val;
-														?>
-														</div>
-
-
-
-		</body>
-		
+		<h1> Tchat</h1>		
+		<div id="tchatF">
+			<div id="tchat">	
+				<?php
+				foreach ($msg as $val)
+				echo $val;
+				?>
+			</div>
+			<div id="tchatForm">
+				<form method="post" action="#">
+					<textarea name="message"></textarea>
+					<input type="submit" value="enter"/>
+			</div>
+		</div>
+		<script>
+		 var x = document.getElementById('tchatF');
+		 x.scrollTop=x.scrollHeight;
+		</script>
+		<div id="questionF">
+			<div id="affQ">
+				<?php 
+				$question = get_all_question(1);
+				$i = 0;
+				while ($question[$i]["id"] > 0)
+				{
+					print_r("toto");
+					echo "<div id=".$question[$i]["id"]."><p>".$question[$i]["question"]." upvote ".$question[$i]["upvote"]."<a href=\"#\" onclick=\"upvote(".$question[$i++]["id"].")\"><i class=\"icon -chevron-up\"></i></a></div>";
+				}
+				?>
+			</div>
+		</div>
+	</body>
+	
