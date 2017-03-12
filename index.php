@@ -17,11 +17,8 @@ session_start();
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="css/popup.css" type="text/css" media="screen" />
 		<script type="text/javascript" src="ressources/jquery.js"></script>
-		<script type="text/javascript" src="tchat/tchat.js"></script>
-	
+		<script type="text/javascript" src="tchat/tchat.js"></script>	
 		<script type="text/javascript" src="user/popup.js"></script>
-				<script type="text/javascript" src="question/question.js"></script>
-
 		<script type="text/javascript">
 		<?php
 		 $data =  get_last_message();
@@ -80,6 +77,7 @@ session_start();
 				<form method="post" action="#">
 					<textarea name="message"></textarea>
 					<input type="submit" value="enter"/>
+				</form>
 			</div>
 		</div>
 		<script>

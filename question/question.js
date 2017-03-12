@@ -10,7 +10,6 @@ function upvote(id){
 	alert("toto");
 }
 function reloadDiv(data){
-	console.log(data);
 	document.getElementById('affQ').innerHTML = data;
 
 }
