@@ -1,7 +1,10 @@
 var url="tchat/tchatAjax.php";
 var url2 = "question/questionAjax.php"
 var lastid=0;
+var lastidQ=0;
 var timer = setInterval(getMessage,1000);
+
+var timer2 = setInterval(getQuestion,1000);
 
 $(function(){
 	$("#tchatForm form").submit(function(){
@@ -35,14 +38,22 @@ function getMessage(){
 			div.innerHTML = div.innerHTML + data.result;
 			var x = document.getElementById('tchatF');
 			x.scrollTop=x.scrollHeight;
+			getQuestion();
 			//			$("#tchat").append(data.result)
 			lastid=data.lastid;
 		}
-			else{
+		},"json");
+	return false;
+}
+function getQuestion(){
+	$.post(url2, {action:"getQuestions", lastidQ:lastidQ}, function(data){
 
-			}
+		if(data.erreur=="ok"){
 
-			
+			reloadDiv(data.div);
+			var z = document.getElementById('affQ');
+			z.scrollTop=x.scrollHeight;
+		}
 		},"json");
 	return false;
 }

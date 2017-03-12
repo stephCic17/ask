@@ -27,6 +27,7 @@ function insert_upvote_question_no_user($id_q){
 }
 
 function get_last_question(){
+	include "../connexion.php";
 	include "connexion.php";
 
 	$select = "SELECT id_q FROM questions ORDER BY id_q DESC LIMIT 1";
