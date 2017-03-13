@@ -2,7 +2,7 @@ var url="tchat/tchatAjax.php";
 var url2 = "question/questionAjax.php"
 var popupActive = 0;
 var url3="user/userAjax.php";
-var timer2 = setInterval(interval,1000);
+//var timer2 = setInterval(interval,1000);
 var lastid=0;
 var lastidQ=0;
 
@@ -51,24 +51,29 @@ function getMessage(){
 
 function loadConnect(){
 	if (popupActive == 0){
-		$('.popupConnect').fadeIn('slow');
+		$('.row').fadeOut();
+		$('.popupConnect').fadeIn();
+
 		popupActive = 1;
 	}
 }
 function loadInscription(){
 	if (popupActive == 0){
-		$('.popupInscription').fadeIn('slow');
-		
+		$('.row').fadeOut();
+		$('.popupInscription').fadeIn();
+
 		popupActive = 1;
 	}
 }
 
 function closeInscription(){
-	$('.popupInscription').fadeOut('slow');
+	$('.popupInscription').fadeOut('fast');
 	popupActive = 0;
+	$('.row').fadeIn('slow');
 }
 function closeConnect(){
-	$('.popupConnect').fadeOut('slow');
+	$('.popupConnect').fadeOut('fast');
+	$('.row').fadeIn('slow');
 	popupActive = 0;
 }
 

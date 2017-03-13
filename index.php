@@ -20,7 +20,32 @@ session_start();
 	<script type="text/javascript">
 	</script>
 </head>
-<body>
+<body id="body">
+	<div class="popupConnect">
+		<div class="p">
+			<h2>Se Connecter</h2>
+			<form method="post" action="user/login.php">
+				<p><input type="text" name="pseudo" placeholder="login"/></p>
+				<p><input type="password" name="password" placeholder="password"/>
+					<p><input type="submit" value="ok"></p>
+			</form>
+		</div>
+		<a class="close" href="#" onclick="closeConnect()">X</a>
+	</div>
+	<div class="popupInscription">
+		<div class="p">
+			<h2>S'inscrire</h2>
+			<form method="post" action="user/create_account.php">
+				<p><input type="text" name="first" placeholder="firstname"></p>
+				<p><input type="text" name="last" placeholder="lastname"></p>
+				<p><input type="email" name="mail" placeholder="mail"></p>
+				<p><input type="text" name="pseudo" placeholder="login"/></p>
+				<p><input type="password" name="password" placeholder="password"/></p>
+				<p><input type="submit" value="ok"></p>
+			</form>
+		</div>
+		<a class="close"  href="#" onclick="closeInscription()"> X</a>
+	</div>
 	<div class="container">
 		<nav id='nav'>
 			<ul>
@@ -32,27 +57,7 @@ session_start();
 				<li><a id="link" ui-sref-active="active" ui-sref="nav.home" class="uppercase center">Accueil</a></li>
 			</ul>
 		</nav>
-		<div class="popupConnect">
-			<h2>Se Connecter</h2>
-			<a href="#" onclick="closeConnect()">X</a>
-			<form method="post" action="user/login.php">
-				<input type="text" name="pseudo" placeholder="login"/>
-				<input type="password" name="password" placeholder="password"/>
-				<input type="submit" value="ok">
-			</form>
-		</div>
-		<div class="popupInscription">
-			<a href="#" onclick="closeInscription()">X</a>
-			<h2>S'inscrire</h2>
-			<form method="post" action="user/create_account.php">
-				<input type="text" name="first" placeholder="firstname">
-				<input type="text" name="last" placeholder="lastname">
-				<input type="email" name="mail" placeholder="mail">
-				<input type="text" name="pseudo" placeholder="login"/>
-				<input type="password" name="password" placeholder="password"/>
-				<input type="submit" value="ok">
-			</form>
-		</div>
+
 		<div class="row">
 			<div id="flux">
 				<img style="" src="assets/imgs/jpg/amina.jpg">
@@ -76,7 +81,7 @@ session_start();
 		<div id="questionF">
 			<h1> Question</h1>		
 			<div id="affQ">
-				<?php $question = get_all_question(1);$i = 0;while ($question[$i]["id"] > 0){echo "<div id=".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a href=\"#\" onclick=\"upvote(".$question[$i++]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> votes ".$question[$i]["upvote"]."</div>";}?>
+				<?php $question = get_all_question(1);$i = 0;while ($question[$i]["id"] > 0){echo "<div id=".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a href=\"#\" onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> votes ".$question[$i++]["upvote"]."</div>";}?>
 			</div>
 			<?php if ($_SESSION["id"]){?>
 				<div id="questionForm">

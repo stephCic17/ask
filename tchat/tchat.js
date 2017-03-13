@@ -53,6 +53,7 @@ function getMessage(){
 function loadConnect(){
 	if (popupActive == 0){
 		$('.popupConnect').fadeIn('slow');
+		$('.row').fadeOut('slow');
 		popupActive = 1;
 	}
 }

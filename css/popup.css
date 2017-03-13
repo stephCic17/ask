@@ -1,22 +1,43 @@
 .popupConnect{
-		background: #FFF;
+	background: rgba(0,0,0,0.9);
 		border: black 2px;
-		margin: auto;
-		margin-top: 150px;
-		height:200px;
-		width:200px;
-		display:none;
-	}
-.popupInscription{
-		background: #FFF;
-		border: black 2px;
-		margin: auto;
-		margin-top: 150px;
-		height:200px;
-		width:200px;
-		display:none;
-	}
+		padding-top:20%;
 
+		min-width:100%;
+		min-height:100%;
+		position: relative;
+		text-align:center;
+		display:none;
+}
+.p{
+	background-color:#FFF;
+	display:inline-block;
+	padding: 2%;
+}
+.close{
+	text-align:right;
+	vertical-align: top;
+	margin-bottom:20px;
+	font-weight: bold;
+	font-size: 2em;
+}
+.popupInscription{
+	background: rgba(0,0,0,0.6);
+		border: black 2px;
+		padding-top:20%;
+
+		min-width:100%;
+		min-height:100%;
+		position: relative;
+		text-align:center;
+		display:none;
+}
+
+.black{
+	background-color: black;
+	min-width:100%;
+	min-height:100%;
+}
 .popupPseudo{
 		background: #FFF;
 		border: black 2px;
@@ -40,7 +61,7 @@
 	margin-top:10%;
 	margin-right:2%;
 	padding:2% 2% 2% 2%;
-	max-width:100%;
+	max-width:36%;
 	max-height: 40%;
 	overflow-x : hidden;
 	background-color: rgba(0,0,0,0.2);
@@ -53,7 +74,7 @@
 	float:left;
 	position:relative;
 	max-width:60%;
-	max-height: 40%
+//	max-height: 40%
 	overflow-x : hidden;
 	background-color: rgba(0,0,0,0.2);
 	display:inline-block;
@@ -68,10 +89,17 @@ textarea{
 	width:90%;
 	text-align:center;
 }
+.icon{
+	border-radius: 50%;
+	background-color: rgba(0,0,0,0.1);
+	padding: 4px 7px 7px 7px;
+	text-align:center;
+	display:inline-block;
+}
 #questionF{
+	margin: 2% 0 0 0;
 	padding:2% 2% 2% 2%;
 	min-width:100%;
-
 	max-height: 40%;
 	overflow-x : hidden;
 	background-color: rgba(0,0,0,0.2);
