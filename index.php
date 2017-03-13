@@ -25,7 +25,7 @@ session_start();
 		<div class="p">
 			<h2>Se Connecter</h2>
 			<form method="post" action="user/login.php">
-				<p><input type="text" name="pseudo" placeholder="login"/></p>
+				<p><input type="text" name="pseudo" placeholder="pseudo"/></p>
 				<p><input type="password" name="password" placeholder="password"/>
 					<p><input type="submit" value="ok"></p>
 			</form>
@@ -39,7 +39,7 @@ session_start();
 				<p><input type="text" name="first" placeholder="firstname"></p>
 				<p><input type="text" name="last" placeholder="lastname"></p>
 				<p><input type="email" name="mail" placeholder="mail"></p>
-				<p><input type="text" name="pseudo" placeholder="login"/></p>
+				<p><input type="text" name="pseudo" placeholder="pseudo"/></p>
 				<p><input type="password" name="password" placeholder="password"/></p>
 				<p><input type="submit" value="ok"></p>
 			</form>
@@ -65,7 +65,9 @@ session_start();
 					<div id="tchat">
 						<?php $msg = get_all_message();foreach ($msg as $val) echo $val; ?>
 					</div>
-					<?php if ($_SESSION["id"]){?>
+																																																 <script>var x = document.getElementById('tchat');
+x.scrollTop = x.scrollHeight;</script>
+																																																 <?php if ($_SESSION["id"]){?>
 						<div id="tchatForm">
 							<form method="post" action="#">
 							<div class="content">
