@@ -28,7 +28,7 @@ if ($_POST["action"] == "getMessage"){
 	$j = 0;
 	$ok = array();
 	while ($i > -1)
-		$d["result"].= $data[$i--];
+		$d["result"]= $datai--];
 	$d["erreur"] = "ok";
 }
 echo json_encode($d);

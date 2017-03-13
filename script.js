@@ -2,16 +2,18 @@ var url="tchat/tchatAjax.php";
 var url2 = "question/questionAjax.php"
 var popupActive = 0;
 var url3="user/userAjax.php";
-var timer2 = setInterval(interval,1000);
+var timer2 = setInterval(interval,2000);
 var lastid=0;
 var lastidQ=0;
 
 $(function(){
 	$("#tchatForm form").submit(function(){
 		var message = $("#tchatForm form input").val();
+		var x = document.getElementById('tchat');
+		x.scrollTop = x.scrollHeight;
 		$.post(url, {action:"addMessage", message:message}, function(data){
 			if(data.erreur == "ok"){
-				getMessage();
+
 			}
 			else{	
 			}
@@ -92,7 +94,21 @@ function getQuestion(){
 function upvote(id){
 	$.post(url2, {action:"addUpvote", id:id}, function(data){
 		if (data.erreur == "ok"){
+
+			console.log(data.up);
 			reloadDiv(data.div);
+		}
+		else if (data.erreur == "id")
+		{
+				if (popupActive == 0){
+		$('.row').fadeOut();
+		$('.popupInscription').fadeIn();
+
+		popupActive = 1;
+	}
+		}
+		else{
+			alert("Vous avez déjà voté pour cette question");
 		}
 	}, "json");
 	return false;
@@ -103,7 +119,7 @@ function reloadDiv(data){
 }
 function reloadDivTchat(data){
 	document.getElementById('tchat').innerHTML = data;
-		var x = document.getElementById('tchat');
-				x.scrollTop = x.scrollHeight;
+//		var x = document.getElementById('tchat');
+//				x.scrollTop = x.scrollHeight;
 
 }

@@ -2,7 +2,8 @@
 function insert_message($id_user, $message){
 	include "../connexion.php";
 
-	$insert = "INSERT INTO tchat(id_user, message) VALUES ('$id_user', '$message')";
+	$timestamp = time();
+	$insert = "INSERT INTO tchat(id_user, message, timestamp) VALUES ('$id_user', '$message', '$timestamp')";
 	$result = pg_query($dbconnect, $insert);
 }
 
@@ -17,6 +18,10 @@ function get_last_message(){
 	return $last[0];
 }
 
+function get_hour($timestamp){
+	return date("H:i", $timestamp);
+}
+
 function get_all_message(){
 	include "connexion.php";
 	include "../user/Users.php";
@@ -26,7 +31,7 @@ function get_all_message(){
 	$i = 0;
 	$data = array();
 	while(($msg = pg_fetch_row($res)) && $i < 42){
-		$data[$i++] .= '<b>'.get_pseudo_user($msg[1]).'</b><p class="tchatP">'.$msg[2].'</p>';
+		$data[$i++] .= '<b>'.get_pseudo_user($msg[1]).'<p class="hour">'.get_hour($msg[3]).'</p></b><p class="tchatP">'.$msg[2].'</p>';
 	}
 	$i = count($data)-1;
 	$j = 0;
