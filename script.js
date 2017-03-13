@@ -1,7 +1,7 @@
 var url="tchat/tchatAjax.php";
 var url2 = "question/questionAjax.php"
 var popupActive = 0;
-var url3="../user/userAjax.php";
+var url3="user/userAjax.php";
 var timer2 = setInterval(interval,1000);
 var lastid=0;
 var lastidQ=0;
@@ -44,7 +44,6 @@ function interval(){
 function getMessage(){
 	$.post(url, {action:"getMessage", lastid:lastid}, function(data){
 		if(data.erreur=="ok"){
-			alert(toto);
 			reloadDivTchat(data.result);
 		}
 	},"json");

@@ -30,8 +30,9 @@ function get_all_message(){
 	}
 	$i = count($data)-1;
 	$j = 0;
-	while ($i < -1)
+	$ok = array();
+	while ($i > -1)
 		$ok[$j++] = $data[$i--];
 
-	return $data;
+	return $ok;
 }
