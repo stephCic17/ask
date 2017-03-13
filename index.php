@@ -7,7 +7,7 @@ include "question/Questions.php";
 
 
 session_start();
-				$msg = get_all_message();
+//$msg = get_all_message();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 		  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -18,7 +18,6 @@ session_start();
 		<link rel="stylesheet" href="css/popup.css" type="text/css" media="screen" />
 		<script type="text/javascript" src="ressources/jquery.js"></script>
 		<script type="text/javascript" src="tchat/tchat.js"></script>	
-		<script type="text/javascript" src="user/popup.js"></script>
 		<script type="text/javascript">
 		<?php
 		 $data =  get_last_message();
@@ -31,8 +30,8 @@ session_start();
 
 	</head>
 	<body>
-				<nav id='nav'>
-
+		<div class="container">
+		<nav id='nav'>
 				<ul>
 					<li><a href="" id="logo" ui-sref="nav.home"><img src="assets/imgs/jpg/CiconiaLogo.png" width="150px"/></a></li>
 					<li><?php if (!$_SESSION["pseudo"]){?><a href="#" onClick="loadInscription()" class="cta touch button half-right -big -round -line-grey-lighten-5">S'inscrire</a><?php } ?></li>
@@ -45,7 +44,7 @@ session_start();
 				</ul>
 			</div>
 		</nav>
-		<div class="container">
+
 			<div class="popupConnect">
 				<h2>Se Connecter</h2>
 				<a href="#" onclick="closeConnect()">X</a>
@@ -67,13 +66,17 @@ session_start();
 					<input type="submit" value="ok">
 				</form>
 			</div>
-			<h1> Tchat</h1>		
+			<div>
+
+			</div>
+			<div class="row">
+				<div>
+					<p>Video</p>
+				</div>
 			<div id="tchatF">
+			<h1> Tchat</h1>		
 				<div id="tchat">	
-					<?php
-					foreach ($msg as $val)
-					echo $val;
-					?>
+
 				</div>
 				<div id="tchatForm">
 					<form method="post" action="#">
@@ -82,12 +85,9 @@ session_start();
 					</form>
 				</div>
 			</div>
-			<script>
-			 var x = document.getElementById('tchatF');
-			 x.scrollTop=x.scrollHeight;
-			</script>
-		</div>
-		<div id="questionF">
+			</div>
+			<div id="questionF">
+				<h1> Question</h1>		
 			<div id="affQ">
 				<?php 
 				$question = get_all_question(1);
