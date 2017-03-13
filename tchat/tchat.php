@@ -25,7 +25,7 @@ function get_all_message(){
 	$res = pg_query($dbconnect, $allmsg);
 	$i = 0;
 	$data = array();
-	while(($msg = pg_fetch_row($res))){
+	while(($msg = pg_fetch_row($res)) && $i < 42){
 		$data[$i++] .= '<b>'.get_pseudo_user($msg[1]).':'.$msg[2].'</b><br />';
 	}
 	$i = count($data)-1;

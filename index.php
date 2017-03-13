@@ -7,7 +7,7 @@ include "question/Questions.php";
 
 
 session_start();
-				$msg = get_all_message();
+//$msg = get_all_message();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 		  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -18,19 +18,20 @@ session_start();
 		<link rel="stylesheet" href="css/popup.css" type="text/css" media="screen" />
 		<script type="text/javascript" src="ressources/jquery.js"></script>
 		<script type="text/javascript" src="tchat/tchat.js"></script>	
-		<script type="text/javascript" src="user/popup.js"></script>
 		<script type="text/javascript">
 		<?php
 		 $data =  get_last_message();
+		 $dataQ =  get_last_question();
 		 ?>
 		 var lastid = <?php echo $data; ?>;
+		 var lastidQ = <?php echo $dataQ; ?>;
 		 var popupActive = 0;
 		</script>
 
 	</head>
 	<body>
-				<nav id='nav'>
-			<div class="container">
+		<div class="container">
+		<nav id='nav'>
 				<ul>
 					<li><a href="" id="logo" ui-sref="nav.home"><img src="assets/imgs/jpg/CiconiaLogo.png" width="150px"/></a></li>
 					<li><?php if (!$_SESSION["pseudo"]){?><a href="#" onClick="loadInscription()" class="cta touch button half-right -big -round -line-grey-lighten-5">S'inscrire</a><?php } ?></li>
@@ -44,47 +45,49 @@ session_start();
 			</div>
 		</nav>
 
-		<div class="popupConnect">
-			<h2>Se Connecter</h2>
-			<a href="#" onclick="closeConnect()">X</a>
-			<form method="post" action="user/login.php">
-				<input type="text" name="pseudo" placeholder="login"/>
-				<input type="password" name="password" placeholder="password"/>
-				<input type="submit" value="ok">
-			</form>
-		</div>
-		<div class="popupInscription">
-			<a href="#" onclick="closeInscription()">X</a>
-			<h2>S'inscrire</h2>
-			<form method="post" action="user/create_account.php">
-				<input type="text" name="first" placeholder="firstname">
-				<input type="text" name="last" placeholder="lastname">
-				<input type="email" name="mail" placeholder="mail">
-				<input type="text" name="pseudo" placeholder="login"/>
-				<input type="password" name="password" placeholder="password"/>
-				<input type="submit" value="ok">
-			</form>
-		</div>
-		<h1> Tchat</h1>		
-		<div id="tchatF">
-			<div id="tchat">	
-				<?php
-				foreach ($msg as $val)
-				echo $val;
-				?>
-			</div>
-			<div id="tchatForm">
-				<form method="post" action="#">
-					<textarea name="message"></textarea>
-					<input type="submit" value="enter"/>
+			<div class="popupConnect">
+				<h2>Se Connecter</h2>
+				<a href="#" onclick="closeConnect()">X</a>
+				<form method="post" action="user/login.php">
+					<input type="text" name="pseudo" placeholder="login"/>
+					<input type="password" name="password" placeholder="password"/>
+					<input type="submit" value="ok">
 				</form>
 			</div>
-		</div>
-		<script>
-		 var x = document.getElementById('tchatF');
-		 x.scrollTop=x.scrollHeight;
-		</script>
-		<div id="questionF">
+			<div class="popupInscription">
+				<a href="#" onclick="closeInscription()">X</a>
+				<h2>S'inscrire</h2>
+				<form method="post" action="user/create_account.php">
+					<input type="text" name="first" placeholder="firstname">
+					<input type="text" name="last" placeholder="lastname">
+					<input type="email" name="mail" placeholder="mail">
+					<input type="text" name="pseudo" placeholder="login"/>
+					<input type="password" name="password" placeholder="password"/>
+					<input type="submit" value="ok">
+				</form>
+			</div>
+			<div>
+
+			</div>
+			<div class="row">
+				<div>
+					<p>Video</p>
+				</div>
+			<div id="tchatF">
+			<h1> Tchat</h1>		
+				<div id="tchat">	
+
+				</div>
+				<div id="tchatForm">
+					<form method="post" action="#">
+						<textarea name="message"></textarea>
+						<input type="submit" value="enter"/>
+					</form>
+				</div>
+			</div>
+			</div>
+			<div id="questionF">
+				<h1> Question</h1>		
 			<div id="affQ">
 				<?php 
 				$question = get_all_question(1);
@@ -101,6 +104,6 @@ session_start();
 					<input type="submit" value="enter"/>
 				</form>
 			</div>
-		</div>
+														</div>
 	</body>
 	
