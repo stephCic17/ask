@@ -30,7 +30,7 @@ session_start();
 					<p><input type="submit" value="ok"></p>
 			</form>
 		</div>
-		<a class="close" href="#" onclick="closeConnect()">X</a>
+		<a class="close" onclick="closeConnect()">X</a>
 	</div>
 	<div class="popupInscription">
 		<div class="p">
@@ -44,9 +44,8 @@ session_start();
 				<p><input type="submit" value="ok"></p>
 			</form>
 		</div>
-		<a class="close"  href="#" onclick="closeInscription()"> X</a>
+		<a class="close" onclick="closeInscription()"> X</a>
 	</div>
-	<div class="container">
 		<nav id='nav'>
 			<ul>
 				<li><a href="" id="logo" ui-sref="nav.home"><img src="assets/imgs/jpg/CiconiaLogo.png" width="150px"/></a></li>
@@ -57,30 +56,32 @@ session_start();
 				<li><a id="link" ui-sref-active="active" ui-sref="nav.home" class="uppercase center">Accueil</a></li>
 			</ul>
 		</nav>
-																																																 <div class="row">
-			<div id="flux">
-				<img style="max-width:100%" src="assets/imgs/jpg/amina.jpg">
-			</div>
-			<div id="tchatF">
-				<div id="tchat">
-					<?php $msg = get_all_message();foreach ($msg as $val) echo $val; ?>
+		<div class="container">
+			<div class="row">
+				<div id="flux">
+					<img style="max-width:100%" src="assets/imgs/jpg/amina.jpg">
 				</div>
-				<?php if ($_SESSION["id"]){?>
-					<div id="tchatForm">
-						<form method="post" action="#">
+				<div id="tchatF">
+					<div id="tchat">
+						<?php $msg = get_all_message();foreach ($msg as $val) echo $val; ?>
+					</div>
+					<?php if ($_SESSION["id"]){?>
+						<div id="tchatForm">
+							<form method="post" action="#">
 							<div class="content">
 								<input type="text" class="tchatArea" name="message">
 								<button class="hidden" type="submit"><a><i type="submit" class="icon -paper-plane"></i></a></button></div>
 						</form>
-					</div>
+						</div>
 				<?php }
 				else
 					echo "<p> Connectez-vous pour acceder au tchat</p>"?>
 			</div>
+
 		<div id="questionF">
-			<h6> QUESTIONS DU LIVE</h6>		
+						<h6> QUESTIONS DU LIVE</h6>		
 			<div id="affQ">
-				<?php $question = get_all_question(1);$i = 0;while ($question[$i]["id"] > 0){echo "<div id=".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a href=\"#\" onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> votes ".$question[$i++]["upvote"]."</div>";}?>
+				<?php $question = get_all_question(1);$i = 0;while ($question[$i]["id"] > 0){echo "<div id=".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a  onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> votes ".$question[$i++]["upvote"]."</div>";}?>
 			</div>
 			<?php if ($_SESSION["id"]){?>
 				<div id="questionForm">
@@ -88,7 +89,8 @@ session_start();
 						<textarea name="question"></textarea>
 						<input type="submit" value="enter"/>
 					</form>
-				</div><?php } else echo "<p> Connectez-vous pour poser votre question</p>"?>
+									   </div><?php } else echo "<p> Connectez-vous pour poser votre question</p>";
+?>
 		</div>
 </body>
 	

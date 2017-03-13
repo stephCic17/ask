@@ -1,5 +1,15 @@
 <?php
 
+function test_upvote($id_q, $id_user){
+	include "../connexion.php";
+	include "connexion.php";
+
+	$select = "SELECT id_up FROM upvotes WHERE id_q='$id_q' AND id_user='$id_user'";
+	$result = pg_query($dbconnect, $select);
+	$res = pg_fetch_row($result);
+	return $res[0];
+}
+
 function insert_question($id_user, $question, $id_session){
 	include "../connexion.php";
 

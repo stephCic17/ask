@@ -2,7 +2,7 @@ var url="tchat/tchatAjax.php";
 var url2 = "question/questionAjax.php"
 var popupActive = 0;
 var url3="user/userAjax.php";
-var timer2 = setInterval(interval,1000);
+var timer2 = setInterval(interval,2000);
 var lastid=0;
 var lastidQ=0;
 
@@ -92,6 +92,7 @@ function getQuestion(){
 function upvote(id){
 	$.post(url2, {action:"addUpvote", id:id}, function(data){
 		if (data.erreur == "ok"){
+			console.log(data.up);
 			reloadDiv(data.div);
 		}
 	}, "json");
