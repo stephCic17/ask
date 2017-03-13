@@ -57,21 +57,20 @@ session_start();
 				<li><a id="link" ui-sref-active="active" ui-sref="nav.home" class="uppercase center">Accueil</a></li>
 			</ul>
 		</nav>
-
-		<div class="row">
+																																																 <div class="row">
 			<div id="flux">
-				<img style="" src="assets/imgs/jpg/amina.jpg">
+				<img style="max-width:100%" src="assets/imgs/jpg/amina.jpg">
 			</div>
 			<div id="tchatF">
-				<h1> Tchat</h1>		
 				<div id="tchat">
 					<?php $msg = get_all_message();foreach ($msg as $val) echo $val; ?>
 				</div>
 				<?php if ($_SESSION["id"]){?>
 					<div id="tchatForm">
 						<form method="post" action="#">
-							<textarea name="message"></textarea>
-							<input type="submit" value="enter"/>
+							<div class="content">
+								<input type="text" class="tchatArea" name="message">
+								<button class="hidden" type="submit"><a><i type="submit" class="icon -paper-plane"></i></a></button></div>
 						</form>
 					</div>
 				<?php }
@@ -79,7 +78,7 @@ session_start();
 					echo "<p> Connectez-vous pour acceder au tchat</p>"?>
 			</div>
 		<div id="questionF">
-			<h1> Question</h1>		
+			<h6> QUESTIONS DU LIVE</h6>		
 			<div id="affQ">
 				<?php $question = get_all_question(1);$i = 0;while ($question[$i]["id"] > 0){echo "<div id=".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a href=\"#\" onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> votes ".$question[$i++]["upvote"]."</div>";}?>
 			</div>

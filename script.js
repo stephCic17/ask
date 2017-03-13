@@ -2,13 +2,13 @@ var url="tchat/tchatAjax.php";
 var url2 = "question/questionAjax.php"
 var popupActive = 0;
 var url3="user/userAjax.php";
-//var timer2 = setInterval(interval,1000);
+var timer2 = setInterval(interval,1000);
 var lastid=0;
 var lastidQ=0;
 
 $(function(){
 	$("#tchatForm form").submit(function(){
-		var message = $("#tchatForm form textarea").val();
+		var message = $("#tchatForm form input").val();
 		$.post(url, {action:"addMessage", message:message}, function(data){
 			if(data.erreur == "ok"){
 				getMessage();
@@ -103,5 +103,7 @@ function reloadDiv(data){
 }
 function reloadDivTchat(data){
 	document.getElementById('tchat').innerHTML = data;
+		var x = document.getElementById('tchat');
+				x.scrollTop = x.scrollHeight;
 
 }
