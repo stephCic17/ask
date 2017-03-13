@@ -26,12 +26,13 @@ function get_all_message(){
 	$i = 0;
 	$data = array();
 	while(($msg = pg_fetch_row($res)) && $i < 42){
-		$data[$i++] .= '<b>'.get_pseudo_user($msg[1]).':'.$msg[2].'</b><br />';
+		$data[$i++] .= '<b>'.get_pseudo_user($msg[1]).'</b><p class="tchatP">'.$msg[2].'</p>';
 	}
 	$i = count($data)-1;
 	$j = 0;
-	while ($i < -1)
+	$ok = array();
+	while ($i > -1)
 		$ok[$j++] = $data[$i--];
 
-	return $data;
+	return $ok;
 }

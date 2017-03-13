@@ -9,7 +9,7 @@ if ($_POST["action"] == "TestPseudo"){
 	if (test_pseudo($login) == 0){		
 		$d["erreur"] = "ok";
 		extract($_SESSION);
-		insert_user($last, $first, $mail, $password, $login);
+		insert_user(htmlentities($last,ENT_QUOTES, "UTF-8") , htmlentities($first, ENT_QUOTES, "UTF-8"), htmlentities($mail. ENT_QUOTES, "UTF-8"), htmlentities($password, ENT_QUOTES, "UTF-8"), htmlentities($login, ENT_QUOTES, "UTF-8"));
 		$_SESSION["pseudo"] = $login;
 		$_SESSION["id"] = get_id_user($pseudo);
 	}
