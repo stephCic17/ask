@@ -10,7 +10,7 @@ $d["erreur"] = "toto";
 extract ($_POST);
 if ($_POST){
 if ($_POST["action"] == "addMessage"){
-	$d["test"] = insert_message($_SESSION["id"],$message);
+	$d["test"] = insert_message($_SESSION["id"],htmlentities($message, ENT_QUOTES, "UTF-8"));
 	$d["erreur"] = "ok";
 }
 $d["result"] = "";

@@ -9,7 +9,6 @@ function loadConnect(){
 function loadInscription(){
 	if (popupActive == 0){
 		$('.popupInscription').fadeIn('slow');
-
 		popupActive = 1;
 	}
 }
