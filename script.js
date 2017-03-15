@@ -21,9 +21,11 @@ $(function(){
 	})
 	$("#questionForm form").submit(function(){
 		var question = $("#questionForm form textarea").val();
+		var z = document.getElementById('affQ');
+		z.scrollTop=z.scrollHeight;
 		$.post(url2, {action:"addQuestion", question:question}, function(data){
 			if(data.erreur == "ok"){
-				getQuestion();
+			
 			}
 		},"json");
 	})
@@ -59,19 +61,39 @@ function loadConnect(){
 		popupActive = 1;
 	}
 }
+function sendIdentifiant(){
+		$('.popupConnect').fadeOut();
+		$('.sendIdentifiant').fadeIn();
+		popupActive = 1;
+}
 function loadInscription(){
 	if (popupActive == 0){
-		$('.row').fadeOut();
 		$('.popupInscription').fadeIn();
-
 		popupActive = 1;
 	}
+}
+function loadInscriptionConnect(){
+	$('.popupConnect').fadeOut();
+	$('.popupInscription').fadeIn();
+	popupActive = 1;
+
+}
+function loadConnectInscription(){
+	$('.popupInscription').fadeOut();
+	$('.popupConnect').fadeIn();
+	popupActive = 1;
+
 }
 
 function closeInscription(){
 	$('.popupInscription').fadeOut('fast');
 	popupActive = 0;
 	$('.row').fadeIn('slow');
+}
+function closeSendInscription(){
+	$('.sendIdentifiant').fadeOut('fast');
+	popupActive = 0;
+		$('.row').fadeIn('slow');
 }
 function closeConnect(){
 	$('.popupConnect').fadeOut('fast');
@@ -84,8 +106,6 @@ function getQuestion(){
 
 		if(data.erreur=="ok"){
 			reloadDiv(data.div);
-			var z = document.getElementById('affQ');
-			z.scrollTop=z.scrollHeight;
 		}
 		},"json");
 	return false;
@@ -119,7 +139,4 @@ function reloadDiv(data){
 }
 function reloadDivTchat(data){
 	document.getElementById('tchat').innerHTML = data;
-//		var x = document.getElementById('tchat');
-//				x.scrollTop = x.scrollHeight;
-
 }

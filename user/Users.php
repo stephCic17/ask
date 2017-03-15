@@ -1,5 +1,38 @@
 <?php
 
+function change_password_user($id, $pass){
+	include "../connexion.php";
+	$select = "SELECT date_inscription FROM users WHERE id_user='$id'";
+	$result = pg_query($dbconnect, $select);
+	$date = pg_fetch_row($result);
+
+	$date_inscription = $date[0];
+
+	$password = hash('whirlpool', $date_inscription.$pass);
+	$update = "UPDATE users SET password='$password' WHERE id_user='$id'";
+	$result = pg_query($dbconnect, $update);
+	$res = pg_fetch_row($result);
+	return $update;
+}
+
+function get_date_inscription($id){
+	include "../connexion.php";
+	$select = "SELECT date_inscription FROM users WHERE id_user='$id'";
+	$result = pg_query($dbconnect, $select);
+	$date = pg_fetch_row($result);
+	return $date[0];
+}
+
+function get_id_with_mail($mail){
+	include "../connexion.php";
+
+	$select = "SELECT id_user FROM users WHERE mail='$mail'";
+	$result = pg_query($dbconnect, $select);
+	$mail = pg_fetch_row($result);
+	return $mail[0];
+	
+}
+
 function get_mail_user($id_user){
 	include "../connexion.php";
 
