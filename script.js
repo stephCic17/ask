@@ -11,6 +11,8 @@ $(function(){
 		var message = $("#tchatForm form input").val();
 		var x = document.getElementById('tchat');
 		x.scrollTop = x.scrollHeight;
+		var y= document.getElementByClass('tchatArea');
+			y.focus();
 		$.post(url, {action:"addMessage", message:message}, function(data){
 			if(data.erreur == "ok"){
 

@@ -4,7 +4,7 @@ include "connexion.php";
 include "tchat/tchat.php";
 include "user/Users.php";
 include "question/Questions.php";
-include "element.php";
+include "function.php";
 
 session_start();
 ?>
@@ -17,7 +17,10 @@ session_start();
 	<title>Ciconia</title>
 	<link rel="stylesheet" href="css/popup.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-
+		<link rel="stylesheet" href="css/navbar.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/footer.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/question.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/chat.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="ressources/jquery.js"></script>
 	<script type="text/javascript" src="script.js"></script>	
 </head>
@@ -60,9 +63,9 @@ session_start();
 		<nav id='nav'>
 			<ul>
 				<li><a id="logo" ui-sref="nav.home"><img src="assets/imgs/jpg/CiconiaLogo.png" width="150px"></a></li>
-				<li><?php if (!$_SESSION["pseudo"]){?><a onClick="loadInscription()" class="cta touch button half-right -big -round -line-grey-lighten-5">S'inscrire</a><?php } ?></li>
-				<li><?php if (!$_SESSION["pseudo"]){?><a onClick="loadConnect()" class="cta touch button half-right -big -round -line-grey-lighten-5">Se Connecter</a><?php }	else{?>
-					<a href="user/disconnect.php"  class="cta touch button half-right -big -round -line-grey-lighten-5">Se Deconnecter</a><?php } ?></li>
+				<li><?php if (!$_SESSION["pseudo"]){?><a onClick="loadInscription()" class="cta touch button half-right  -round -line-grey-lighten-5">S'inscrire</a><?php } ?></li>
+				<li><?php if (!$_SESSION["pseudo"]){?><a onClick="loadConnect()" class="cta touch button half-right -round -line-grey-lighten-5">Se Connecter</a><?php }	else{?>
+					<a href="user/disconnect.php"  class="cta touch button half-right  -round -line-grey-lighten-5">Se Deconnecter</a><?php } ?></li>
 				<li><a id="link" ui-sref-active="active" class="uppercase center">Live</a></li>
 				<li><a id="link" ui-sref-active="active" ui-sref="nav.home" class="uppercase center">Accueil</a></li>
 			</ul>
@@ -95,7 +98,6 @@ session_start();
 					 echo "<button class='connect' onClick='loadConnect()'> Connectez-vous pour acceder au tchat</button>";
 								 ?>
 				</div>
-				
 				<div id="questionF">
 					<div class="row">
 						<h6> QUESTIONS DU LIVE</h6>		
@@ -114,5 +116,5 @@ session_start();
 					</div>
 				</div>
 </body>
-
-	
+<?php
+echo get_footer(); ?>

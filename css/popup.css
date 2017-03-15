@@ -1,5 +1,3 @@
-#nav { position: relative; }
-
 .popupConnect{
 		border: black 2px;
 		min-width:100%;
@@ -21,9 +19,8 @@
 		text-align:center;
 		display:none;
 }
-.msg{
-	padding: 10px;
-}
+
+
 .p{
 		margin-top: 20vh;
 		background-color:#FFF;
@@ -75,55 +72,14 @@
 .hidden{
 	background:none;
 	border: none;
+}
 
-}
-#tchatF{
-	margin-top:2%;
-	margin-right:2%;
-	background-color: rgb(242,242,242);
-	display:inline-block;
-}
-#tchat
-{
-	max-height: 400px;
-	overflow : auto;
-}
-.hour{
-	color: rgb(164,164,164);
-	font-size: 0.9em;
-}
-#flux{
-	margin-top:2%;
-	margin-right:2%;
-	padding:2% 2% 2% 2%;
-	float:left;
-	position:relative;
-	max-width:60%;
-//	max-height: 40%
-
-	background-color: rgba(0,0,0,0.2);
-	display:inline-block;
-}
-.row{
-	overflow: inherit;
-}
-b{
-	color: #000000;
-	font-style:bold;
-
-}
-#tchatForm button { flex-shrink: 3; margin-bottom:0;}
-#tchatForm input { margin-bottom: 0;}
-.hour{
-	display: inline-block;
-	float: right;
-	padding: 0 0 0 5px; 
-}
 h4{
 	margin-bottom:0;
 	color: rgb(107,144,148);
 	font-weight: bold;
 }
+
 p{
 	font-weight: bold;
 	color: rgb(202,202,202);
@@ -143,26 +99,9 @@ textarea{
 	width:90%;
 	text-align:center;
 }
+
 h6{
 	font-width: 1em;
 	color:rgb(135,135,135);
 	font-weight: bold;
-}
-#affQ .icon{
-	border-radius: 50%;
-	background-color: rgb(245,245,245);
-	padding: 4px 7px 7px 7px;
-	text-align:center;
-	display:inline-block;
-}
-#affQ{
-	max-height: 400px;
-	overflow : auto;
-}
-
-#questionF{
-	margin: 2% 0 0 0;
-	padding:0% 0% 0% 0%;
-	min-width:100%;
-	display:inline-block;
 }
