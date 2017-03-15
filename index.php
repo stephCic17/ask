@@ -12,6 +12,7 @@ session_start();
 		  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"/>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 	<meta http-equiv="Content-Type" content="text/html"/>
 	<title>Ciconia</title>
 	<link rel="stylesheet" href="css/popup.css" type="text/css" media="screen" />
@@ -80,9 +81,12 @@ session_start();
 					<?php if ($_SESSION["id"]){?>
 						<div id="tchatForm">
 							<form method="post" action="#">
-								<div class="content">
-									<input type="text" class="tchatArea" name="message" />
-									<button class="hidden" type="submit"><a><i type="submit" class="icon -paper-plane"></i></a></button>
+								<div class="merge -horizontal -large">
+									<input class="tchatArea" type=”text" placeholder="Ton texte..." />
+									<button class="button -primary -only-icon">
+										<i class="icon -paper-plane"></i>
+									</button>
+								</div>
 								</div>
 							</form>
 						</div>

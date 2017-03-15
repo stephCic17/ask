@@ -21,6 +21,9 @@
 		text-align:center;
 		display:none;
 }
+.msg{
+	padding: 10px;
+}
 .p{
 		margin-top: 20vh;
 		background-color:#FFF;
@@ -77,8 +80,6 @@
 #tchatF{
 	margin-top:2%;
 	margin-right:2%;
-	padding:2% 2% 2% 2%;
-	max-width:40%;
 	background-color: rgb(242,242,242);
 	display:inline-block;
 }
@@ -87,7 +88,7 @@
 	max-height: 400px;
 	overflow : auto;
 }
-.tchatP{
+.hour{
 	color: rgb(164,164,164);
 	font-size: 0.9em;
 }
@@ -111,6 +112,8 @@ b{
 	font-style:bold;
 
 }
+#tchatForm button { flex-shrink: 3; margin-bottom:0;}
+#tchatForm input { margin-bottom: 0;}
 .hour{
 	display: inline-block;
 	float: right;
@@ -145,7 +148,7 @@ h6{
 	color:rgb(135,135,135);
 	font-weight: bold;
 }
-.icon{
+#affQ .icon{
 	border-radius: 50%;
 	background-color: rgb(245,245,245);
 	padding: 4px 7px 7px 7px;
@@ -159,7 +162,7 @@ h6{
 
 #questionF{
 	margin: 2% 0 0 0;
-	padding:2% 2% 2% 2%;
+	padding:0% 0% 0% 0%;
 	min-width:100%;
 	display:inline-block;
 }
