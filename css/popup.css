@@ -1,5 +1,18 @@
-#nav { position: relative }
+#nav { position: relative; }
+
 .popupConnect{
+		border: black 2px;
+		min-width:100%;
+		min-height:100%;
+		position: relative;
+		text-align:center;
+		display:none;
+	background: rgba(0,0,0,0.9);
+		color:rgb(182,182,182);
+}
+
+
+.sendIdentifiant{
 	background: rgba(0,0,0,0.9);
 		border: black 2px;
 		min-width:100%;
@@ -9,11 +22,16 @@
 		display:none;
 }
 .p{
-	background-color:#FFF;
-	display:inline-block;
-	padding: 2%;
+		margin-top: 20vh;
+		background-color:#FFF;
+		display:inline-block;
+		padding: 2%;
+		font-size: 1em;
+		min-width: 30%;
+		min-height: 30%;
 }
 .close{
+	margin-top: 20vh;
 	text-align:right;
 	vertical-align: top;
 	margin-bottom:20px;
@@ -21,7 +39,7 @@
 	font-size: 2em;
 }
 .popupInscription{
-	background: rgba(0,0,0,0.6);
+	background: rgba(0,0,0,0.9);
 		border: black 2px;
 		color:rgb(182,182,182);
 		min-width:100%;
@@ -64,10 +82,10 @@
 	background-color: rgb(242,242,242);
 	display:inline-block;
 }
-#tchat{
+#tchat
+{
 	max-height: 400px;
-	overflow-y : scroll;
-
+	overflow : auto;
 }
 .tchatP{
 	color: rgb(164,164,164);
@@ -107,6 +125,17 @@ p{
 	font-weight: bold;
 	color: rgb(202,202,202);
 }
+.connect{
+	border-radius: 3px;
+	background-color: rgb(107,144,148);
+	color:#FFF;
+	margin: auto;
+	box-shadow:none;
+	font-weight: bold;
+	border: none;
+	display:block;
+	text-align: center;
+}
 textarea{
 	width:90%;
 	text-align:center;
@@ -123,12 +152,14 @@ h6{
 	text-align:center;
 	display:inline-block;
 }
+#affQ{
+	max-height: 400px;
+	overflow : auto;
+}
+
 #questionF{
 	margin: 2% 0 0 0;
 	padding:2% 2% 2% 2%;
 	min-width:100%;
-	max-height: 40%;
-	overflow-x : hidden;
-//	background-color: rgba(0,0,0,0.2);
 	display:inline-block;
 }

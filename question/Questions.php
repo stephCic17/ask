@@ -13,7 +13,7 @@ function test_upvote($id_q, $id_user){
 function insert_question($id_user, $question, $id_session){
 	include "../connexion.php";
 
-	$insert = "INSERT INTO questions (id_user, question, upvote, id_session) VALUES ('$id_user', '$question', '0', '$id_session')";
+	$insert = "INSERT INTO questions (id_user, question, upvote, id_session, flag) VALUES ('$id_user', '$question', '0', '$id_session', 0)";
 	$result = pg_query($dbconnect, $insert);
 	return $insert;
 }
@@ -59,11 +59,29 @@ include "connexion.php";
 	return $question[0];
 
 }
+function get_all_question_answer($id_session){
+include "connexion.php";
+include "../connexion.php";
+
+	$select = "SELECT * FROM questions WHERE id_session='$id_session ' AND flag='1' ORDER BY upvote DESC";
+	$result = pg_query($dbconnect, $select);
+	$quest = array();
+	$i = 0;
+	while($question = pg_fetch_row($result)){
+		$quest[$i]["id"] = $question[0];
+		$quest[$i]["question"] = $question[2];
+		$quest[$i++]["upvote"] = $question[3];
+	}
+
+	return $quest;
+
+}
+
 function get_all_question($id_session){
 include "connexion.php";
 include "../connexion.php";
 
-	$select = "SELECT * FROM questions WHERE id_session='$id_session ' ORDER BY upvote DESC";
+	$select = "SELECT * FROM questions WHERE id_session='$id_session ' AND flag='0' ORDER BY upvote DESC";
 	$result = pg_query($dbconnect, $select);
 	$quest = array();
 	$i = 0;
