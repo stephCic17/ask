@@ -21,7 +21,7 @@ session_start();
 	<meta name="description" content="Ciconia est une application calendrier de grossesse personnalisé"/>
 	<meta name="keywords" content="grossesse, timeline"/>
 
-	<link rel="icon" href="images/favicon.ico">
+	<link rel="icon" href="assets/imgs/favicon.ico">
 
 	<link rel="stylesheet" href="css/popup.css" type="text/css" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
