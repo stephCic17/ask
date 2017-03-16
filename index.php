@@ -12,18 +12,27 @@ session_start();
 		  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"/>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-	<meta http-equiv="Content-Type" content="text/html"/>
-	<title>Ciconia</title>
-	<link rel="stylesheet" href="css/popup.css" type="text/css" media="screen" />
 
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="css/navbar.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/footer.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/question.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/chat.css" type="text/css" media="screen" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<meta http-equiv="Content-Type" content="text/html"/>
+
+	<title>Ciconia</title>
+	<meta name="author" content="Ciconia"/>
+	<meta name="description" content="Ciconia est une application calendrier de grossesse personnalisé"/>
+	<meta name="keywords" content="grossesse, timeline"/>
+
+	<link rel="icon" href="images/favicon.ico">
+
+	<link rel="stylesheet" href="css/popup.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/navbar.css" type="text/css" />
+	<link rel="stylesheet" href="css/footer.css" type="text/css" />
+	<link rel="stylesheet" href="css/question.css" type="text/css" />
+	<link rel="stylesheet" href="css/chat.css" type="text/css" />
+
 	<script type="text/javascript" src="ressources/jquery.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+
 </head>
 <body>
 	<div class="popupConnect">
@@ -67,7 +76,7 @@ session_start();
 		  <div class="container">
 		    <div class="row">
 		      <div class="twelve col">
-		        <a id="logo" class="pull-left"><img src="assets/imgs/jpg/CiconiaLogo.png" width="150px"/></a>
+		        <a id="logo" class="pull-left"></a>
 						<?php if (!$_SESSION["pseudo"]){?>
 							<a onClick="loadInscription()" class="button -round small pull-right -line-complement">S'inscrire</a>
 							<a onClick="loadConnect()" class="button -round small pull-right -line-complement">Se connecter</a>
