@@ -7,18 +7,7 @@
 	color: rgb(164,164,164);
 	font-size: 0.9em;
 }
-#flux{
-	margin-top:2%;
-	margin-right:2%;
-	padding:2% 2% 2% 2%;
-	float:left;
-	position:relative;
-	max-width:60%;
-	//max-height: 40%
 
-					  background-color: rgba(0,0,0,0.2);
-	display:inline-block;
-}
 #tchatF{
 	margin-top:2%;
 	margin-right:2%;

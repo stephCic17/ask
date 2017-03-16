@@ -35,6 +35,8 @@ session_start();
 
 </head>
 <body>
+
+	<!-- POPUP LOGIN -->
 	<div class="popupConnect">
 		<div class="p">
 			<h2>Se Connecter</h2>
@@ -48,6 +50,9 @@ session_start();
 		</div>
 		<a class="close" onclick="closeConnect()">X</a>
 	</div>
+	<!-- END OF POPUP LOGIN -->
+
+	<!-- POPUP SUBSCRIBE -->
 	<div class="popupInscription">
 		<div class="p">
 			<h2>S'inscrire</h2>
@@ -63,6 +68,9 @@ session_start();
 		</div>
 		<a class="close" onclick="closeInscription()"> X</a>
 	</div>
+	<!-- POPUP SUBSCRIBE -->
+
+	<!-- POPUP SENDMAIL ? -->
 	<div class="sendIdentifiant">
 		<form method="post" action="user/sendMail.php">
 			<p><input type="email" name="mail" placeholder="email"/></p>
@@ -70,6 +78,7 @@ session_start();
 		</form>
 			<a class="close" onclick="closeSendInscription()">X</a>
 	</div>
+	<!-- END OF POPUP SENDMAIL ? -->
 
 		<!-- NAVIGATION -->
 		<nav id="nav">
@@ -93,9 +102,8 @@ session_start();
 
 		<div class="container">
 			<div class="row">
-				<div id="flux">
-					<!-- <img src="assets/imgs/jpg/amina.jpg"/> -->
-					<iframe src="https://www.youtube.com/embed/txcWDy_3xS8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+				<div id="videoWrapper">
+					<iframe width="560" height="349" src="https://www.youtube.com/embed/txcWDy_3xS8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 				</div>
 				<div id="tchatF">
 					<div id="tchat">
@@ -137,14 +145,5 @@ session_start();
 								  ?>
 					</div>
 				</div>
+				<?php echo get_footer(); ?>
 </body>
-<?php
-echo get_footer(); ?>
-
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="css/navbar.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/footer.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/question.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/chat.css" type="text/css" media="screen" />
-	<script type="text/javascript" src="ressources/jquery.js"></script>
-	<script type="text/javascript" src="script.js"></script>
