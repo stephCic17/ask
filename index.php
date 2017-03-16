@@ -61,16 +61,42 @@ session_start();
 		</form>
 			<a class="close" onclick="closeSendInscription()">X</a>
 	</div>
-		<nav id='nav'>
+		<!-- <nav id='nav'>
 			<ul>
 				<li><a id="logo" ui-sref="nav.home"><img src="assets/imgs/jpg/CiconiaLogo.png" width="150px"></a></li>
-				<li><?php if (!$_SESSION["pseudo"]){?><a onClick="loadInscription()" class="cta touch button half-right  -round -line-grey-lighten-5">S'inscrire</a><?php } ?></li>
-				<li><?php if (!$_SESSION["pseudo"]){?><a onClick="loadConnect()" class="cta touch button half-right -round -line-grey-lighten-5">Se Connecter</a><?php }	else{?>
-					<a href="user/disconnect.php"  class="cta touch button half-right  -round -line-grey-lighten-5">Se Deconnecter</a><?php } ?></li>
-				<li><a href="youtube" id="link" ui-sref-active="active" class="uppercase center">Live</a></li>
-				<li><a id="link" ui-sref-active="active" ui-sref="nav.home" class="uppercase center">Accueil</a></li>
+				<?php if (!$_SESSION["pseudo"]){?>
+					<li><a onClick="loadInscription()" class="cta touch button half-right  -round -line-grey-lighten-5">S'inscrire</a></li>
+				<?php } ?>
+				<?php if (!$_SESSION["pseudo"]){?>
+					<li><a onClick="loadConnect()" class="cta touch button half-right -round -line-grey-lighten-5">Se Connecter</a></li>
+				<?php }	else { ?>
+					<li><a href="user/disconnect.php"  class="cta touch button half-right  -round -line-grey-lighten-5">Se Deconnecter</a></li>
+				<?php } ?>
+				<li><a href="youtube" id="link" class="uppercase center">Live</a></li>
+				<li><a id="link" class="uppercase center">Accueil</a></li>
 			</ul>
+		</nav> -->
+
+		<!-- NAVIGATION -->
+		<nav>
+		  <div class="container">
+		    <div class="row">
+		      <div class="twelve col">
+		        <a id="logo" class="pull-left"><img src="assets/imgs/jpg/CiconiaLogo.png" width="150px"/></a>
+						<?php if (!$_SESSION["pseudo"]){?>
+							<a onClick="loadInscription()" class="button -round small pull-right -line-complement">S'inscrire</a>
+							<a onClick="loadConnect()" class="button -round small pull-right -line-complement">Se connecter</a>
+						<?php } else { ?>
+							<a class="button -round small pull-right -line-complement pull-right">Se déconnecter</a>
+						<?php } ?>
+						<a href="#" class="pull-right">Live</a>
+						<a href="/" class="pull-right">Accueil</a>
+		      </div>
+		    </div>
+		  </div>
 		</nav>
+		<!-- END OF NAVIGATION -->
+
 		<div class="container">
 			<div class="row">
 				<div id="flux">
@@ -127,5 +153,4 @@ echo get_footer(); ?>
 	<link rel="stylesheet" href="css/question.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/chat.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="ressources/jquery.js"></script>
-	<script type="text/javascript" src="script.js"></script>	
-
+	<script type="text/javascript" src="script.js"></script>
