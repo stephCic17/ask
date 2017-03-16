@@ -29,6 +29,7 @@ session_start();
 	<link rel="stylesheet" href="css/footer.css" type="text/css" />
 	<link rel="stylesheet" href="css/question.css" type="text/css" />
 	<link rel="stylesheet" href="css/chat.css" type="text/css" />
+	<link rel="stylesheet" href="css/videoWrapper.css" type="text/css" />
 
 	<script type="text/javascript" src="ressources/jquery.js"></script>
 	<script type="text/javascript" src="script.js"></script>
