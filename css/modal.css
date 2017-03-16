@@ -1,0 +1,7 @@
+.modal .card>div {
+	padding: 20px;
+}
+
+.modal .card>div .two-cols-verticaly-aligned {
+	min-height: auto;
+}
