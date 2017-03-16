@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	$(".open-login-modal").click(function() {
-
+		console.log("loginmodalopen");
 		$("#loginModal").addClass("-opening");
 		window.setTimeout(function() {
 
@@ -14,7 +14,7 @@ $(document).ready(function(){
 	});
 
 	$(".open-subscribe-modal").click(function() {
-
+		console.log("subscribemodalopen");
 		$("#subscribeModal").addClass("-opening");
 		window.setTimeout(function() {
 
@@ -27,7 +27,7 @@ $(document).ready(function(){
 	});
 
 	$(".close-modal").click(function() {
-
+		console.log("close");
 		$(".modal").addClass("-closing");
 		window.setTimeout(function() {
 
