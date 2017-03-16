@@ -92,7 +92,6 @@ session_start();
 		<div class="overlay close-modal"></div>
 		<div class="content">
 			<div class="card content-wrapper">
-				<img class="image" src="images/icon/Comet.svg"></img>
 				<div class="close-button close-modal">
 					<i class="icon -cross"></i>
 				</div>
@@ -100,26 +99,22 @@ session_start();
 					<h5>Inscription</h5>
 					<div class="two-cols-verticaly-aligned">
 						<div class="wrapper">
-							<button class="button -large -primary facebook">
-								<span>Se connecter avec facebook</span>
-							</button>
-							<hr class="hr -half -center" data-title="OU"/>
 							<fieldset class="-large -has-icon ">
 								<i class="icon -user"></i>
-								<input type="password" placeholder="Email" />
+								<input name="name" type="name" placeholder="Email" />
 							</fieldset>
 							<fieldset class="-large -has-icon">
 								<i class="icon -lock"></i>
-								<input type="password" placeholder="Mot de passe" />
+								<input name="password" type="password" placeholder="Mot de passe" />
 							</fieldset>
 							<button class="button toggle-loading -large -primary">
 								<span>S'inscrire</span>
 							</button>
 						</div>
 						<div class="wrapper why">
-							<img class="image" src="images/icon/moonWalker2.svg"></img>
+							<img class="image" src="assets/imgs/svg/egg.svg"></img>
 							<label>Pourquoi créer un compte</label>
-							<p>Bien remplir son compte nous aide à rendre vos résultats plus pertinents encore</p>
+							<p>Pendant les emissions de Ciconia, avoir un compte vous permet de réagir en temps réel et de poser des questions à l'avance.</p>
 						</div>
 					</div>
 					<footer>
