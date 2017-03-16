@@ -72,19 +72,19 @@ session_start();
 	</div>
 
 		<!-- NAVIGATION -->
-		<nav>
+		<nav id="nav">
 		  <div class="container">
 		    <div class="row">
 		      <div class="twelve col">
 		        <a id="logo" class="pull-left"></a>
 						<?php if (!$_SESSION["pseudo"]){?>
-							<a onClick="loadInscription()" class="button -round small pull-right -line-primary">S'inscrire</a>
-							<a onClick="loadConnect()" class="button -round small pull-right -line-primary">Se connecter</a>
+							<a onClick="loadInscription()" class="button -round -small pull-right -line-primary">S'inscrire</a>
+							<a onClick="loadConnect()" class="button -round -small pull-right -line-primary">Se connecter</a>
 						<?php } else { ?>
-							<a href="user/disconnect.php" class="button -round small pull-right -line-primary pull-right">Se déconnecter</a>
+							<a href="user/disconnect.php" class="button -round -small pull-right -line-primary pull-right">Se déconnecter</a>
 						<?php } ?>
-						<a href="#" class="pull-right">Live</a>
-						<a href="/" class="pull-right">Accueil</a>
+						<a href="#" class="link pull-right">Live</a>
+						<a href="/" class="link pull-right">Accueil</a>
 		      </div>
 		    </div>
 		  </div>

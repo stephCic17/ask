@@ -5,17 +5,16 @@
 	background-image: url('../assets/imgs/svg/logo.svg');
 	transition: all 200ms ease;
 	opacity:0.8;
-	margin-top:5px;
-	margin-top: 15px;
-	margin-right: 10px;
+	margin-top: 25px;
 }
 
 #logo:hover {
   opacity:1;
 }
 
+
 #nav {
-	height: 60px;
+	height: 80px;
 	width: 100%;
 	background-color: white;
 	position:fixed;
@@ -23,7 +22,7 @@
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-#nav a {
+#nav .link {
   text-decoration: none;
   margin-top: 19px;
   font-weight: 800;
@@ -32,27 +31,9 @@
   transition: all 200ms ease;
 }
 
-#nav a:hover 	{ outline: 0; text-decoration: none; opacity:1; }
-#nav a:active 	{ outline: 0;}
-#nav a:visited 	{ color: #424242; }
-#nav a:focus	 	{ outline: 0;  }
+#nav .link:hover 	{ outline: 0; text-decoration: none; opacity:1; }
+#nav .link:active 	{ outline: 0;}
+#nav .link:visited 	{ color: #424242; }
+#nav .link:focus	 	{ outline: 0;  }
 
-#nav a.pull-left + #nav a.pull-left {
-  margin-left: 25px;
-}
-
-#nav a.pull-left:not(#logo){
-  opacity:0.6;
-}
-
-#nav a.pull-left:not(#logo):hover {
-  opacity:1;
-}
-
-#nav a.active {
-  opacity:1!important;
-}
-
-#nav a.pull-right {
-  margin-top: 15px;
-}
+#nav .button {  }
