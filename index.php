@@ -39,21 +39,6 @@ session_start();
 <body>
 
 	<!-- POPUP LOGIN -->
-	<!-- <div class="popupConnect">
-		<div class="p">
-			<h2>Se Connecter</h2>
-			<form method="post" action="user/login.php">
-				<p><input type="text" name="pseudo" placeholder="pseudo"/></p>
-				<p><input type="password" name="password" placeholder="password"/></p>
-				<p><input type="submit" value="ok" /></p>
-			</form>
-			<a class="identifiant" onclick="sendIdentifiant()">Me renvoyer mes identifiants</a>
-			<button class="connect" onclick="loadInscriptionConnect()">M'inscrire</button>
-		</div>
-		<a class="close" onclick="closeConnect()">X</a>
-	</div>
- -->
-
 	<div id="loginModal" class="modal login">
 		<div class="overlay close-modal"></div>
 		<div class="content">
@@ -67,23 +52,11 @@ session_start();
 						<fieldset class="-large -has-icon">
 							<i class="icon -user"></i>
 							<input name="name" type="text" placeholder="Pseudo ou email" />
-							<!-- <div class="tag visible -line-danger -large -top -pointing">
-								<span>Votre identifiant n'existe pas</span>
-							</div> -->
 						</fieldset>
 						<fieldset class="-large -has-icon">
 							<i class="icon -lock"></i>
 							<input name="password" type="password" placeholder="Mot de passe" />
-							<!-- <div class="tag visible -line-danger -large -top -pointing">
-								<span>Votre mot de passe est inccorect</span>
-							</div> -->
 						</fieldset>
-						<!-- <div class="checkbox">
-							<input id="checkbox2" type="checkbox"/>
-							<label for="checkbox2">
-								<span>rester connecté</span>
-							</label>
-						</div> -->
 						<button type="submit" class="button loading -large -primary">
 							<span>Se connecter</span>
 						</button>
@@ -96,8 +69,6 @@ session_start();
 			</div>
 		</div>
 	</div>
-
-
 	<!-- END OF POPUP LOGIN -->
 
 	<!-- POPUP SUBSCRIBE -->
@@ -135,8 +106,8 @@ session_start();
 		      <div class="twelve col">
 		        <a id="logo" class="pull-left"></a>
 						<?php if (!$_SESSION["pseudo"]){?>
-							<a onClick="loadInscription()" class="button -round pull-right -line-primary">S'inscrire</a>
-							<a onClick="loadConnect()" class="button -round pull-right -line-primary">Se connecter</a>
+							<a class="button -round pull-right -line-primary open-subscribe-modal">S'inscrire</a>
+							<a class="button -round pull-right -line-primary open-login-modal">Se connecter</a>
 						<?php } else { ?>
 							<a href="user/disconnect.php" class="button -round pull-right -line-primary pull-right">Se déconnecter</a>
 						<?php } ?>
