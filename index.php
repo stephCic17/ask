@@ -61,21 +61,6 @@ session_start();
 		</form>
 			<a class="close" onclick="closeSendInscription()">X</a>
 	</div>
-		<!-- <nav id='nav'>
-			<ul>
-				<li><a id="logo" ui-sref="nav.home"><img src="assets/imgs/jpg/CiconiaLogo.png" width="150px"></a></li>
-				<?php if (!$_SESSION["pseudo"]){?>
-					<li><a onClick="loadInscription()" class="cta touch button half-right  -round -line-grey-lighten-5">S'inscrire</a></li>
-				<?php } ?>
-				<?php if (!$_SESSION["pseudo"]){?>
-					<li><a onClick="loadConnect()" class="cta touch button half-right -round -line-grey-lighten-5">Se Connecter</a></li>
-				<?php }	else { ?>
-					<li><a href="user/disconnect.php"  class="cta touch button half-right  -round -line-grey-lighten-5">Se Deconnecter</a></li>
-				<?php } ?>
-				<li><a href="youtube" id="link" class="uppercase center">Live</a></li>
-				<li><a id="link" class="uppercase center">Accueil</a></li>
-			</ul>
-		</nav> -->
 
 		<!-- NAVIGATION -->
 		<nav>
