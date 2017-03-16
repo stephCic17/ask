@@ -24,11 +24,10 @@
 
 #nav .link {
   text-decoration: none;
-  margin-top: 19px;
-  font-weight: 800;
-  color: #424242;
+  margin-top: 29px;
   opacity:0.8;
   transition: all 200ms ease;
+  margin-right: 15px;
 }
 
 #nav .link:hover 	{ outline: 0; text-decoration: none; opacity:1; }
@@ -36,4 +35,6 @@
 #nav .link:visited 	{ color: #424242; }
 #nav .link:focus	 	{ outline: 0;  }
 
-#nav .button {  }
+#nav .button {
+  margin-top: 22px;
+}
