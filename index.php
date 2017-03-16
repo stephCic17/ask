@@ -130,18 +130,16 @@ session_start();
 			</div>
 		</div>
 	</div>
-
-
 	<!-- POPUP SUBSCRIBE -->
 
 	<!-- POPUP SENDMAIL ? -->
-	<div class="sendIdentifiant">
+	<!-- <div class="sendIdentifiant">
 		<form method="post" action="user/sendMail.php">
 			<p><input type="email" name="mail" placeholder="email"/></p>
 			<p><input type="submit" value="ok"/></p>
 		</form>
 			<a class="close" onclick="closeSendInscription()">X</a>
-	</div>
+	</div> -->
 	<!-- END OF POPUP SENDMAIL ? -->
 
 		<!-- NAVIGATION -->
