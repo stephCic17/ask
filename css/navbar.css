@@ -2,7 +2,7 @@
 #logo {
 	width: 31px;
 	height: 31px;
-	background-image: url('assets/imgs/svg/logo.svg');
+	background-image: url('../assets/imgs/svg/logo.svg');
 	transition: all 200ms ease;
 	opacity:0.8;
 	margin-top:5px;
