@@ -1,6 +1,5 @@
 #tchat
 {
-	max-height: 400px;
 	overflow : auto;
 }
 .hour{
@@ -8,10 +7,6 @@
 	font-size: 0.9em;
 }
 
-#tchatF{
-	background-color: rgb(242,242,242);
-	display:inline-block;
-}
 .tchatArea input{
 	display: inline-block;
 	width: 80%;
@@ -24,4 +19,15 @@
 
 .msg{
 	padding: 10px;
+}
+
+.chat-wrapper {
+	width: 40%;
+	display: inline-block;
+	background-color: rgb(242,242,242);
+}
+
+.chat-wrapper .chat {
+	max-height: 326px;
+	overflow : auto;
 }

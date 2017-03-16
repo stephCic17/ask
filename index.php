@@ -110,8 +110,8 @@ session_start();
 					<!-- END OF VIDEO WRAPPER -->
 
 					<!-- CHAT WRAPPER -->
-					<div id="tchatF">
-						<div id="tchat">
+					<div class="chat-wrapper" id="tchatF">
+						<div class="chat" id="tchat">
 							<?php $msg = get_all_message();foreach ($msg as $val) echo $val; ?>
 						</div>
 						<!-- <script type="text/javascript"> var x = document.getElementById('tchat');
@@ -128,9 +128,7 @@ session_start();
 									</div>
 								</form>
 							</div>
-						<?php }
-						else
-						 echo "<button class='connect' onClick='loadConnect()'> Connectez-vous pour acceder au tchat</button>"; ?>
+						<?php } else echo "<button class='connect' onClick='loadConnect()'> Connectez-vous pour acceder au tchat</button>"; ?>
 			</div>
 			<!-- END OF CHAT WRAPPER -->
 
