@@ -39,7 +39,7 @@ session_start();
 <body>
 
 	<!-- POPUP LOGIN -->
-	<div class="popupConnect">
+	<!-- <div class="popupConnect">
 		<div class="p">
 			<h2>Se Connecter</h2>
 			<form method="post" action="user/login.php">
@@ -52,6 +52,52 @@ session_start();
 		</div>
 		<a class="close" onclick="closeConnect()">X</a>
 	</div>
+ -->
+
+	<div id="loginModal" class="modal login">
+		<div class="overlay close-modal"></div>
+		<div class="content">
+			<div class="card content-wrapper">
+				<div class="close-button close-modal">
+					<i class="icon -cross"></i>
+				</div>
+				<div>
+					<h5>Se connecter</h5>
+					<form method="post" action="user/login.php">
+						<fieldset class="-large -has-icon">
+							<i class="icon -user"></i>
+							<input name="name" type="text" placeholder="Pseudo ou email" />
+							<!-- <div class="tag visible -line-danger -large -top -pointing">
+								<span>Votre identifiant n'existe pas</span>
+							</div> -->
+						</fieldset>
+						<fieldset class="-large -has-icon">
+							<i class="icon -lock"></i>
+							<input name="password" type="password" placeholder="Mot de passe" />
+							<!-- <div class="tag visible -line-danger -large -top -pointing">
+								<span>Votre mot de passe est inccorect</span>
+							</div> -->
+						</fieldset>
+						<!-- <div class="checkbox">
+							<input id="checkbox2" type="checkbox"/>
+							<label for="checkbox2">
+								<span>rester connecté</span>
+							</label>
+						</div> -->
+						<button type="submit" class="button loading -large -primary">
+							<span>Se connecter</span>
+						</button>
+					</form>
+					<footer>
+						<a onclick="loadInscriptionConnect()">S'inscrire</a> -
+						<a onclick="sendIdentifiant()">Mot de passe perdu ?</a>
+					</footer>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 	<!-- END OF POPUP LOGIN -->
 
 	<!-- POPUP SUBSCRIBE -->
