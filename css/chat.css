@@ -1,7 +1,16 @@
-#tchat
-{
+
+.chat-wrapper {
+	width: 35%;
+	display: inline-block;
+	background-color: rgb(242,242,242);
+}
+
+.chat-wrapper .chat {
+	max-height: 325px;
 	overflow : auto;
 }
+
+
 .hour{
 	color: rgb(164,164,164);
 	font-size: 0.9em;
@@ -19,15 +28,4 @@
 
 .msg{
 	padding: 10px;
-}
-
-.chat-wrapper {
-	width: 40%;
-	display: inline-block;
-	background-color: rgb(242,242,242);
-}
-
-.chat-wrapper .chat {
-	max-height: 326px;
-	overflow : auto;
 }

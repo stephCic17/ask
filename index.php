@@ -134,9 +134,12 @@ session_start();
 
 			<!-- QUESTION WRAPPER -->
 			<div class="container">
-				<div id="questionF">
+				<div class="question-wrapper" id="questionF">
 					<div class="row">
-						<h6> QUESTIONS DU LIVE</h6>
+						<h6>
+							<i class="icon -archive"></i>
+							QUESTIONS DU LIVE
+						</h6>
 						<div id="affQ">
 							<?php $question = get_all_question_answer(1);$i = 0;while ($question[$i]["id"] > 0){echo "<div id=n".$question[$i]["id"]."><h4>".$question[$i++]["question"]." <a  ><i class=\"icon -check\"></i></a></h4></div>";}?>
 							<?php $question = get_all_question(1);$i = 0;while ($question[$i]["id"] > 0){echo "<div id=n".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a  onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> votes ".$question[$i++]["upvote"]."</p></div>";}?>
