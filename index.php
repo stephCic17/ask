@@ -100,35 +100,41 @@ session_start();
 		  </div>
 		</nav>
 		<!-- END OF NAVIGATION -->
-
-		<div class="container">
-			<div class="row">
-				<div id="videoWrapper">
-					<iframe width="560" height="349" src="https://www.youtube.com/embed/txcWDy_3xS8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-				</div>
-				<div id="tchatF">
-					<div id="tchat">
-						<?php $msg = get_all_message();foreach ($msg as $val) echo $val; ?>
+		<div id="content">
+			<div class="container">
+					<!-- VIDEO WRAPPER -->
+					<div id="videoWrapper">
+						<iframe width="560" height="349" src="https://www.youtube.com/embed/txcWDy_3xS8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 					</div>
-					<script type="text/javascript">var x = document.getElementById('tchat');
-					 x.scrollTop = x.scrollHeight;</script>
-					<?php if ($_SESSION["id"]){?>
-						<div id="tchatForm">
-							<form method="post" action="#">
-								<div class="merge -horizontal -large">
-									<input class="tchatArea" type=”text" placeholder="Ton texte..." />
-									<button class="button -primary -only-icon">
-										<i class="icon -paper-plane"></i>
-									</button>
-								</div>
-								</div>
-							</form>
+					<!-- END OF VIDEO WRAPPER -->
+
+					<!-- CHAT WRAPPER -->
+					<div id="tchatF">
+						<div id="tchat">
+							<?php $msg = get_all_message();foreach ($msg as $val) echo $val; ?>
 						</div>
-					<?php }
-					else
-					 echo "<button class='connect' onClick='loadConnect()'> Connectez-vous pour acceder au tchat</button>";
-								 ?>
-				</div>
+						<!-- <script type="text/javascript"> var x = document.getElementById('tchat');
+						 x.scrollTop = x.scrollHeight; </script> -->
+						<?php if ($_SESSION["id"]){ ?>
+							<div id="tchatForm">
+								<form method="post" action="#">
+									<div class="merge -horizontal -large">
+										<input class="tchatArea" type=”text" placeholder="Ton texte..." />
+										<button class="button -primary -only-icon">
+											<i class="icon -paper-plane"></i>
+										</button>
+									</div>
+									</div>
+								</form>
+							</div>
+						<?php }
+						else
+						 echo "<button class='connect' onClick='loadConnect()'> Connectez-vous pour acceder au tchat</button>"; ?>
+			</div>
+			<!-- END OF CHAT WRAPPER -->
+
+			<!-- QUESTION WRAPPER -->
+			<div class="container">
 				<div id="questionF">
 					<div class="row">
 						<h6> QUESTIONS DU LIVE</h6>
@@ -146,5 +152,10 @@ session_start();
 								  ?>
 					</div>
 				</div>
-				<?php echo get_footer(); ?>
+			</div>
+			<!-- QUESTION WRAPPER -->
+
+			<?php echo get_footer(); ?>
+		</div>
+
 </body>
