@@ -23,6 +23,7 @@ session_start();
 
 	<link rel="icon" href="assets/imgs/favicon.ico">
 
+	<link rel="stylesheet" href="css/content.css" type="text/css" />
 	<link rel="stylesheet" href="css/popup.css" type="text/css" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<link rel="stylesheet" href="css/navbar.css" type="text/css" />
