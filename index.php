@@ -57,7 +57,7 @@ session_start();
 							<i class="icon -lock"></i>
 							<input name="password" type="password" placeholder="Mot de passe" />
 						</fieldset>
-						<button type="submit" class="button loading -large -primary">
+						<button type="submit" class="button -large -primary">
 							<span>Se connecter</span>
 						</button>
 					</form>
@@ -107,7 +107,7 @@ session_start();
 								<i class="icon -lock"></i>
 								<input name="password" type="password" placeholder="Mot de passe" />
 							</fieldset>
-							<button class="button toggle-loading -large -primary">
+							<button class="button -large -primary">
 								<span>S'inscrire</span>
 							</button>
 						</div>
