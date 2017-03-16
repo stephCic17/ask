@@ -11,5 +11,5 @@ $headers ="From: 'Ciconia'<contact@ciconia.io>"."\n"; // De...
 $headers .='Reply-To: contact@ciconia.io'."\n"; // Adresse E-Mail de réponse
 $headers .='Content-Type: text/html; charset="iso-8859-1"'."\n";
 $headers .='Content-Transfer-Encoding: 8bit';
-
-echo "<script> document.location.href=\"http://ciconia.io/ask\"</script>";
+mail($mail, "renvois d'identifiants", $msg, $headers);
+//echo "<script> document.location.href=\"http://ciconia.io/ask\"</script>";
