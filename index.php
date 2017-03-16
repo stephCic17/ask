@@ -16,6 +16,14 @@ session_start();
 	<meta http-equiv="Content-Type" content="text/html"/>
 	<title>Ciconia</title>
 	<link rel="stylesheet" href="css/popup.css" type="text/css" media="screen" />
+
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/navbar.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/footer.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/question.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/chat.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="ressources/jquery.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
 	<div class="popupConnect">
@@ -66,7 +74,8 @@ session_start();
 		<div class="container">
 			<div class="row">
 				<div id="flux">
-					<img src="assets/imgs/jpg/amina.jpg"/>
+					<!-- <img src="assets/imgs/jpg/amina.jpg"/> -->
+					<iframe src="https://www.youtube.com/embed/txcWDy_3xS8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 				</div>
 				<div id="tchatF">
 					<div id="tchat">
@@ -93,7 +102,7 @@ session_start();
 				</div>
 				<div id="questionF">
 					<div class="row">
-						<h6> QUESTIONS DU LIVE</h6>		
+						<h6> QUESTIONS DU LIVE</h6>
 						<div id="affQ">
 							<?php $question = get_all_question_answer(1);$i = 0;while ($question[$i]["id"] > 0){echo "<div id=n".$question[$i]["id"]."><h4>".$question[$i++]["question"]." <a  ><i class=\"icon -check\"></i></a></h4></div>";}?>
 							<?php $question = get_all_question(1);$i = 0;while ($question[$i]["id"] > 0){echo "<div id=n".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a  onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> votes ".$question[$i++]["upvote"]."</p></div>";}?>
@@ -111,6 +120,7 @@ session_start();
 </body>
 <?php
 echo get_footer(); ?>
+
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="css/navbar.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/footer.css" type="text/css" media="screen" />
@@ -118,3 +128,4 @@ echo get_footer(); ?>
 	<link rel="stylesheet" href="css/chat.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="ressources/jquery.js"></script>
 	<script type="text/javascript" src="script.js"></script>	
+
