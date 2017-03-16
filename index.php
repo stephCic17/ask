@@ -16,6 +16,7 @@ session_start();
 	<meta http-equiv="Content-Type" content="text/html"/>
 	<title>Ciconia</title>
 	<link rel="stylesheet" href="css/popup.css" type="text/css" media="screen" />
+
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="css/navbar.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/footer.css" type="text/css" media="screen" />
@@ -66,7 +67,7 @@ session_start();
 				<li><?php if (!$_SESSION["pseudo"]){?><a onClick="loadInscription()" class="cta touch button half-right  -round -line-grey-lighten-5">S'inscrire</a><?php } ?></li>
 				<li><?php if (!$_SESSION["pseudo"]){?><a onClick="loadConnect()" class="cta touch button half-right -round -line-grey-lighten-5">Se Connecter</a><?php }	else{?>
 					<a href="user/disconnect.php"  class="cta touch button half-right  -round -line-grey-lighten-5">Se Deconnecter</a><?php } ?></li>
-				<li><a id="link" ui-sref-active="active" class="uppercase center">Live</a></li>
+				<li><a href="youtube" id="link" ui-sref-active="active" class="uppercase center">Live</a></li>
 				<li><a id="link" ui-sref-active="active" ui-sref="nav.home" class="uppercase center">Accueil</a></li>
 			</ul>
 		</nav>
@@ -119,3 +120,12 @@ session_start();
 </body>
 <?php
 echo get_footer(); ?>
+
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/navbar.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/footer.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/question.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/chat.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="ressources/jquery.js"></script>
+	<script type="text/javascript" src="script.js"></script>	
+
