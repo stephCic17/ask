@@ -125,7 +125,6 @@ session_start();
 											<i class="icon -paper-plane"></i>
 										</button>
 									</div>
-									</div>
 								</form>
 							</div>
 						<?php } else echo "<button class='connect' onClick='loadConnect()'> Connectez-vous pour acceder au tchat</button>"; ?>
@@ -144,12 +143,12 @@ session_start();
 							$question = get_all_question_answer(1);
 							$i = 0;
 							while ($question[$i]["id"] > 0) {
-								echo "<div class='question' id=n".$question[$i]["id"]."><h4>".$question[$i++]["question"]." <a  ><i class=\"icon -check\"></i></a></h4></div>";
+								echo "<div class='question' id=n".$question[$i]["id"]."><h4>".$question[$i++]["question"]." <a><i class=\"icon -check\"></i></a></h4></div>";
 							}
 							$question = get_all_question(1);
 							$i = 0;
-							while ($question[$i]["id"] > 0){
-								echo "<div class='question' id=n".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a  onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> votes ".$question[$i++]["upvote"]."</p></div>";
+							while ($question[$i]["id"] > 0) {
+								echo "<div class='question' id=n".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> votes ".$question[$i++]["upvote"]."</p></div>";
 							}
 						?>
 					</div>
