@@ -37,3 +37,7 @@
 #nav .button {
   margin-top: 22px;
 }
+
+#nav .button:nth-child(2) {
+  margin-right:0;
+}
