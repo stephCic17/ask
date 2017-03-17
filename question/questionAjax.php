@@ -42,7 +42,7 @@ if ($_POST["action"] == "getQuestions") {
 	$i = 0;
 	while ($question[$i]["id"] > 0)
 	{
-		$d["div"] .= "<div class=\"question\" id=n".$question[$i]["id"]."><div class=\"circle\"><i class=\"state icon -check\"></i></div><h4>".$question[$i]["question"]." </h4></div>";
+		$d["div"] .= "<div class=\"question\" id=n".$question[$i]["id"]."><div class=\"circle\"><i class=\"state icon -check\"></i></div><h4>".$question[$i++]["question"]." </h4></div>";
 	}
 	$question = get_all_question(1);
 	$i = 0;
