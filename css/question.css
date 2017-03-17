@@ -32,4 +32,17 @@
 	float: right;
 }
 
-.question-button { flex-shrink: 3; }
+.question-button { flex-shrink: 6; }
+
+.message h5 {
+	position: absolute;
+	font-size: 6rem;
+	top: 23px;
+	left: 26px;
+}
+.message h5 {
+	margin-left:90px;
+}
+.message form{
+	margin-left:90px;
+}
