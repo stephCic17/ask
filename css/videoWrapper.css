@@ -52,3 +52,6 @@
 #noActiveLive.hidden {
   display: none;
 }
+@media screen and (max-width: 640px) {
+	#videoWrapper {width: 100%; height:auto;}
+}

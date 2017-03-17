@@ -33,3 +33,7 @@
 .msg{
 	padding: 10px;
 }
+
+@media screen and (max-width: 640px) {
+	.chat-wrapper{width:100%;}
+}
