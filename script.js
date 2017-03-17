@@ -37,6 +37,7 @@ $(function(){
 			if(data.erreur == "ok"){
 			}
 			else{
+				console.log("KO");
 			}
 		},"json");
 	})
