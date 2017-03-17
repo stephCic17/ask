@@ -43,7 +43,7 @@
   margin-right:0;
 }
 
-@media (min-width: 10px) and (max-width: 300px) {
+@media (min-width: 10px) and (max-width: 450px) {
 	#logo {
     display: none;
   }

@@ -16,16 +16,24 @@
 	border-bottom: 1px solid rgb(245,245,245);
 }
 
-.question .state {
+.question .circle {
 	position: absolute;
 	top:0;
 	left:0;
 	width: 40px;
 	height: 40px;
+	border-radius: 100%;
+	background-color: rgb(240, 240, 240);
 }
 
 .question h4 {
 	margin-left: 50px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.question i {
+
 }
 
 .question .upvote {
