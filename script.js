@@ -87,13 +87,13 @@ $(document).ready(function(){
 
 	$(".open-lostpassword-modal").click(function(event) {
 		event.preventDefault();
-		console.log("subscribemodalopen");
-		$("#subscribeModal").addClass("-opening");
+		console.log("lostpasswordmodalopen");
+		$("#lostPassordModal").addClass("-opening");
 		window.setTimeout(function() {
 
 			$("body").addClass("no-scroll");
-			$("#subscribeModal").addClass("-open");
-			$("#subscribeModal").removeClass("-opening");
+			$("#lostPassordModal").addClass("-open");
+			$("#lostPassordModal").removeClass("-opening");
 
 		}, 600);
 
