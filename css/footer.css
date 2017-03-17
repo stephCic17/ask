@@ -1,8 +1,7 @@
 #footer {
 	background-color: white;
-	color: black;
 	margin-top: 60px;
-	margin-bottom: 60px;
+	margin-bottom: 45px;
 	overflow: hidden;
 }
 
@@ -12,4 +11,9 @@
 
 #footer a {
 	opacity: 0.5;
+	color: #05b2b5;
+}
+
+#footer #logo {
+	margin-top: 0;
 }
