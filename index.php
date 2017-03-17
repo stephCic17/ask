@@ -214,6 +214,7 @@ session_start();
 					<script>getQuestion();</script>
 					<?php if ($_SESSION["id"]){?>
 						<div id="questionForm">
+							<h5>Posez votre question</h5>
 							<form method="post" action="#">
 								<div class="merge -horizontal -large">
 									<input name="question" type=”text" placeholder="Ton texte..." />
