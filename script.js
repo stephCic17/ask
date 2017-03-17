@@ -2,7 +2,7 @@ var url="tchat/tchatAjax.php";
 var url2 = "question/questionAjax.php"
 var popupActive = 0;
 var url3="user/userAjax.php";
-var timer2 = setInterval(interval,2000);
+//var timer2 = setInterval(interval,2000);
 var lastid=0;
 var lastidQ=0;
 
