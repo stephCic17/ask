@@ -15,7 +15,7 @@ $(function(){
 			y.focus();
 		$.post(url, {action:"addMessage", message:message}, function(data){
 			if(data.erreur == "ok"){
-
+				console.log(data);
 			}
 			else{
 			}
