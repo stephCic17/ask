@@ -4,7 +4,7 @@ include "connexion.php";
 include "tchat/tchat.php";
 include "user/Users.php";
 include "question/Questions.php";
-include "function.php";
+include "ressources/footer.php";
 
 session_start();
 ?>
