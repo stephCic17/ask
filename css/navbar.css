@@ -42,3 +42,9 @@
 #nav .button:nth-child(2) {
   margin-right:0;
 }
+
+@media (min-width: 10px) and (max-width: 300px) {
+	#logo {
+    display: none;
+  }
+}
