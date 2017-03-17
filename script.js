@@ -85,6 +85,20 @@ $(document).ready(function(){
 
 	});
 
+	$(".open-lostpassword-modal").click(function(event) {
+		event.preventDefault();
+		console.log("subscribemodalopen");
+		$("#subscribeModal").addClass("-opening");
+		window.setTimeout(function() {
+
+			$("body").addClass("no-scroll");
+			$("#subscribeModal").addClass("-open");
+			$("#subscribeModal").removeClass("-opening");
+
+		}, 600);
+
+	});
+
 	$(".close-modal").click(function() {
 		console.log("close");
 		$(".modal").addClass("-closing");
@@ -100,54 +114,6 @@ $(document).ready(function(){
 
 });
 
-//
-// function loadConnect(){
-// 	if (popupActive == 0){
-// 		$('.row').fadeOut();
-// 		$('.popupConnect').fadeIn();
-//
-// 		popupActive = 1;
-// 	}
-// }
-// function sendIdentifiant(){
-// 		$('.popupConnect').fadeOut();
-// 		$('.sendIdentifiant').fadeIn();
-// 		popupActive = 1;
-// }
-// function loadInscription(){
-// 	if (popupActive == 0){
-// 		$('.popupInscription').fadeIn();
-// 		popupActive = 1;
-// 	}
-// }
-// function loadInscriptionConnect(){
-// 	$('.popupConnect').fadeOut();
-// 	$('.popupInscription').fadeIn();
-// 	popupActive = 1;
-//
-// }
-// function loadConnectInscription(){
-// 	$('.popupInscription').fadeOut();
-// 	$('.popupConnect').fadeIn();
-// 	popupActive = 1;
-//
-// }
-//
-// function closeInscription(){
-// 	$('.popupInscription').fadeOut('fast');
-// 	popupActive = 0;
-// 	$('.row').fadeIn('slow');
-// }
-// function closeSendInscription(){
-// 	$('.sendIdentifiant').fadeOut('fast');
-// 	popupActive = 0;
-// 		$('.row').fadeIn('slow');
-// }
-// function closeConnect(){
-// 	$('.popupConnect').fadeOut('fast');
-// 	$('.row').fadeIn('slow');
-// 	popupActive = 0;
-// }
 
 function getQuestion(){
 	$.post(url2, {action:"getQuestions", lastidQ:lastidQ}, function(data){
