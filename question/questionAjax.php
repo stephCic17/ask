@@ -24,7 +24,7 @@ if ($_POST["action"] == "addUpvote") {
 				$d["erreur"] = "ok";
 				$question = get_all_question(1);
 				$i = 0;
-				while ($question[$i]["id"] > 0)
+				while ($question[$i]["id"])
 				{
 					$d["div"] .= "<div class=\"question\" id=n".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a class=\"upvote\" onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> votes ".$question[$i++]["upvote"]."</p></div>";
 				}
@@ -40,13 +40,13 @@ if ($_POST["action"] == "getQuestions") {
 	$d["lastid"] = get_last_question();
 	$question = get_all_question_answer(1);
 	$i = 0;
-	while ($question[$i]["id"] > 0)
+	while ($question[$i]["id"])
 	{
-		$d["div"] .= "<div class=\"question\" id=n".$question[$i]["id"]."><div class=\"circle\"><i class=\"state icon -check\"></i></div><h4>".$question[$i]["question"]." </h4></div>";
+		$d["div"] .= "<div class=\"question\" id=n".$question[$i]["id"]."><div class=\"circle\"><i class=\"state icon -check\"></i></div><h4>".$question[$i++]["question"]." </h4></div>";
 	}
 	$question = get_all_question(1);
 	$i = 0;
-	while ($question[$i]["id"] > 0)
+	while ($question[$i]["id"])
 	{
 		$d["div"] .= "<div class=\"question\" id=n".$question[$i]["id"]."><div class=\"circle\"><i class=\"state icon -hourglass\"></i></div><h4>".$question[$i]["question"]." <a class=\"upvote\" onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> Votes ".$question[$i++]["upvote"]."</p></div>";
 	}

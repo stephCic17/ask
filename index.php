@@ -4,7 +4,7 @@ include "connexion.php";
 include "tchat/tchat.php";
 include "user/Users.php";
 include "question/Questions.php";
-include "function.php";
+include "ressources/footer.php";
 
 session_start();
 ?>
@@ -70,7 +70,7 @@ session_start();
 		</div>
 	</div>
 	<!-- END OF POPUP LOGIN -->
-
+	
 	<!-- POPUP SUBSCRIBE -->
 	<div id="subscribeModal" class="modal login -subscribe">
 		<div class="overlay close-modal"></div>
@@ -116,7 +116,7 @@ session_start();
 		</div>
 	</div>
 	<!-- POPUP SUBSCRIBE -->
-
+	
 	<!-- POPUP SENDMAIL ? -->
 	<div id="lostPasswordModal" class="modal login">
 		<div class="overlay close-modal"></div>
@@ -146,12 +146,12 @@ session_start();
 	</div>
 	<!-- END OF POPUP SENDMAIL ? -->
 
-		<!-- NAVIGATION -->
+	<!-- NAVIGATION -->
 		<nav id="nav">
-		  <div class="container">
-		    <div class="row">
-		      <div class="twelve col">
-		        <a id="logo" class="pull-left"></a>
+			<div class="container">
+				<div class="row">
+					<div class="twelve col">
+						<a id="logo" class="pull-left"></a>
 						<?php if (!$_SESSION["pseudo"]){?>
 							<a class="button -round pull-right -line-primary open-subscribe-modal">S'inscrire</a>
 							<a class="button -round pull-right -line-primary open-login-modal">Se connecter</a>
@@ -160,55 +160,55 @@ session_start();
 						<?php } ?>
 						<a href="#" class="link pull-right">Live</a>
 						<a href="/" class="link pull-right">Accueil</a>
-		      </div>
-		    </div>
-		  </div>
+					</div>
+				</div>
+			</div>
 		</nav>
 		<!-- END OF NAVIGATION -->
 		<div id="content">
 			<div class="container">
-					<!-- VIDEO WRAPPER -->
-					<div id="videoWrapper">
-						<iframe width="560" height="349" src="https://www.youtube.com/embed/txcWDy_3xS8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-						<figure id="noActiveLive" class="filter -blur -example">
-				      <figcaption>
-								<div class="egg"></div>
-				        <h6 class="title">Pas de live en cours</h6>
-								<span class="desc">On revient bientôt !</span>
+				<!-- VIDEO WRAPPER -->
+				<div id="videoWrapper">
+					<iframe width="560" height="349" src="https://www.youtube.com/embed/txcWDy_3xS8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+					<figure id="noActiveLive" class="filter -blur -example">
+						<figcaption>
+							<div class="egg"></div>
+							<h6 class="title">Pas de live en cours</h6>
+							<span class="desc">On revient bientôt !</span>
 				      </figcaption>
 				    </figure>
+				</div>
+				<!-- END OF VIDEO WRAPPER -->
+				
+				<!-- CHAT WRAPPER -->
+				<div class="chat-wrapper" id="tchatF">
+					<div class="chat" id="tchat">
+						<?php $msg = get_all_message();foreach ($msg as $val) echo $val; ?>
 					</div>
-					<!-- END OF VIDEO WRAPPER -->
-
-					<!-- CHAT WRAPPER -->
-					<div class="chat-wrapper" id="tchatF">
-						<div class="chat" id="tchat">
-							<?php $msg = get_all_message();foreach ($msg as $val) echo $val; ?>
-						</div>
-						<!-- <script type="text/javascript"> var x = document.getElementById('tchat');
+					<!-- <script type="text/javascript"> var x = document.getElementById('tchat');
 						 x.scrollTop = x.scrollHeight; </script> -->
-						<?php if ($_SESSION["id"]){ ?>
-							<div id="tchatForm">
-								<form method="post" action="#">
-									<div class="merge -horizontal -large">
-										<input class="tchatArea" type=”text" placeholder="Ton texte..." />
-										<button class="button -primary -only-icon">
-											<i class="icon -paper-plane"></i>
-										</button>
-									</div>
-								</form>
-							</div>
-						<?php } else echo "<button class='button -primary -large open-login-modal'> Connectez-vous pour acceder au tchat</button>"; ?>
-			</div>
-			<!-- END OF CHAT WRAPPER -->
-
+					<?php if ($_SESSION["id"]){ ?>
+						<div id="tchatForm">
+							<form method="post" action="#">
+								<div class="merge -horizontal -large">
+									<input class="tchatArea" type=”text" placeholder="Ton texte..." />
+									<button class="button -primary -only-icon">
+										<i class="icon -paper-plane"></i>
+									</button>
+								</div>
+							</form>
+						</div>
+					<?php } else echo "<button class='button -primary -large open-login-modal'> Connectez-vous pour acceder au tchat</button>"; ?>
+				</div>
+				<!-- END OF CHAT WRAPPER -->
+				
 			<!-- QUESTION WRAPPER -->
-			<div class="container">
-				<div class="question-wrapper" id="questionF">
-					<h6>
-						<i class="icon -archive"></i>
-						QUESTIONS DU LIVE
-					</h6>
+				<div class="container">
+					<div class="question-wrapper" id="questionF">
+						<h6>
+							<i class="icon -archive"></i>
+							QUESTIONS DU LIVE
+						</h6>
 					<div id="affQ">
 					</div>
 					<script>getQuestion();</script>

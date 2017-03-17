@@ -2,7 +2,7 @@ var url="tchat/tchatAjax.php";
 var url2 = "question/questionAjax.php"
 var popupActive = 0;
 var url3="user/userAjax.php";
-//var timer2 = setInterval(interval,2000);
+var timer2 = setInterval(interval,2000);
 var lastid=0;
 var lastidQ=0;
 
@@ -11,18 +11,18 @@ $(function(){
 		var message = $("#tchatForm form input").val();
 		var x = document.getElementById('tchat');
 		x.scrollTop = x.scrollHeight;
-		var y= document.getElementByClass('tchatArea');
-			y.focus();
+
 		$.post(url, {action:"addMessage", message:message}, function(data){
+				console.log(data);
 			if(data.erreur == "ok"){
 				console.log(data);
 			}
 			else{
 			}
 		},"json");
-	})
+	});
 	$("#questionForm form").submit(function(){
-		var question = $("#questionForm form textarea").val();
+		var question = $("#questionForm form input").val();
 		var z = document.getElementById('affQ');
 		z.scrollTop=z.scrollHeight;
 		$.post(url2, {action:"addQuestion", question:question}, function(data){
@@ -30,7 +30,7 @@ $(function(){
 
 			}
 		},"json");
-	})
+	});
 	$("#UserForm form").submit(function(){
 		var login = $("#UserForm form input").val();
 		$.post(url3, {action:"TestPseudo", login:login}, function(data){
@@ -40,7 +40,8 @@ $(function(){
 				console.log("KO");
 			}
 		},"json");
-	})
+	});
+
 });
 
 function interval() {
@@ -149,7 +150,6 @@ $(document).ready(function() {
 		isModalOpen = false;
 		closeModal();
 	});
-
 });
 
 
@@ -172,12 +172,12 @@ function upvote(id){
 		}
 		else if (data.erreur == "id")
 		{
-				if (popupActive == 0){
-		$('.row').fadeOut();
-		$('.popupInscription').fadeIn();
-
-		popupActive = 1;
-	}
+			$("#subscribeModal").addClass("-opening");
+			window.setTimeout(function() {
+				$("body").addClass("no-scroll");
+				$("#subscribeModal").addClass("-open");
+				$("#subscribeModal").removeClass("-opening");
+			}, 600);
 		}
 		else{
 			alert("Vous avez déjà voté pour cette question");
