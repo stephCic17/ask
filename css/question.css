@@ -34,7 +34,7 @@
 
 .question-button { flex-shrink: 6; }
 
-.message i {
+.message>i {
 	position: absolute;
 	font-size: 6rem;
 	top: 23px;

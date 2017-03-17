@@ -23,9 +23,9 @@ session_start();
 
 	<link rel="icon" href="assets/imgs/favicon.ico">
 
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<link rel="stylesheet" href="css/content.css" type="text/css" />
 	<link rel="stylesheet" href="css/modal.css" type="text/css" />
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<link rel="stylesheet" href="css/navbar.css" type="text/css" />
 	<link rel="stylesheet" href="css/footer.css" type="text/css" />
 	<link rel="stylesheet" href="css/question.css" type="text/css" />
