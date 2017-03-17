@@ -12,9 +12,16 @@
 }
 
 .question {
+	position: relative;
 	border-bottom: 1px solid rgb(245,245,245);
 }
 
 .question .state {
-	float:left;
+	position: absolute;
+	top:0;
+	left:0;
+}
+
+.question h4 {
+	margin-left: 25px;
 }
