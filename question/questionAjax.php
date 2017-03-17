@@ -9,8 +9,10 @@ $d = array();
 extract ($_POST);
 
 if ($_POST["action"] == "addQuestion") {
-	$d["test"] = insert_question($_SESSION["id"], htmlentities($question, ENT_QUOTES, "UTF-8"), 1);
-	$d["erreur"] = "ok";
+	if ($question != ""){
+		$d["test"] = insert_question($_SESSION["id"], htmlentities($question, ENT_QUOTES, "UTF-8"), 1);
+		$d["erreur"] = "ok";
+	}
 }
 
 if ($_POST["action"] == "addUpvote") {

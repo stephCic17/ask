@@ -164,23 +164,23 @@ $(document).ready(function() {
 			isModalOpen = true;
 		}
 	});
-
+	
 	$(".close-modal").click(function(event) {
 		event.preventDefault();
 		isModalOpen = false;
 		closeModal();
 	});
-
+	
 });
 
 
 function getQuestion(){
 	$.post(url2, {action:"getQuestions", lastidQ:lastidQ}, function(data){
-
+		
 		if(data.erreur=="ok"){
 			reloadDiv(data.div);
 		}
-		},"json");
+	},"json");
 	return false;
 }
 

@@ -19,13 +19,13 @@ function get_footer(){
 				<div class="three col">
 					<h6>Presse</h6>
 					<ul>
-						<li><a href="#">Contactez-nous</a></li>
+						<li><a href="mailto:contact@ciconia.io">Contactez-nous</a></li>
 					</ul>
 				</div>
 				<div class="three col">
 					<h6>Légal</h6>
 					<ul>
-						<li><a href="#">Mentions-légales</a></li>
+						<li><a href="legal.php">Mentions-légales</a></li>
 					</ul>
 				</div>
 			</div>
