@@ -1,8 +1,7 @@
 <?php
 include "Users.php";
 session_start();
-?><script type="text/javascript" src="../script.js"></script>
-<?php
+
 extract($_POST);
 date_default_timezone_set('UTC');
 if (test_pseudo($pseudo) == 0){
@@ -19,6 +18,6 @@ else {
 	$_SESSION["mail"] = $mail;
 	$_SESSION["password"] = $password;
 	
-	echo "	<script>openPseudoExistModal()</script>";
+	echo "	<script> document.location.href=\"http://ciconia.io/ask/user/pseudo.php\"</script>";
 	}
 ?>

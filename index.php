@@ -4,7 +4,7 @@ include "connexion.php";
 include "tchat/tchat.php";
 include "user/Users.php";
 include "question/Questions.php";
-include "footer.php";
+include "ressources/footer.php";
 
 session_start();
 ?>
@@ -146,34 +146,6 @@ session_start();
 	</div>
 	<!-- END OF POPUP SENDMAIL ? -->
 
-	<!-- POPUP PSEUDO EXIST ? -->
-	<div id="PseudoExistModal" class="modal pseudo">
-		<div class="overlay close-modal"></div>
-		<div class="content">
-			<div class="card content-wrapper">
-				<div class="close-button close-modal">
-					<i class="icon -cross"></i>
-				</div>
-				<div>
-					<h5>Mot de passe perdu ?</h5>
-					<form method="post" action="#">
-						<fieldset class="-large -has-icon">
-							<i class="icon -user"></i>
-							<input name="login" type="text" placeholder="Pseudo" />
-						</fieldset>
-						<button type="submit" class="button -large -primary">
-							<span>Envoyer !</span>
-						</button>
-					</form>
-					<footer>
-						<a class="open-login-modal">Se connecter</a> -
-					</footer>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- END OF POPUP PSEUDO EXIST ? -->
-
 		<!-- NAVIGATION -->
 		<nav id="nav">
 		  <div class="container">
@@ -261,13 +233,3 @@ session_start();
 		</div>
 
 </body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-							 ga('create', 'UA-93939676-1', 'auto');
-ga('send', 'pageview');
-
-</script>

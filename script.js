@@ -83,14 +83,6 @@ var openLostPasswordModal = function() {
 		$("#lostPasswordModal").removeClass("-opening");
 	}, 600);
 }
-var openPseudoExistModal = function() {
-	$("#lostPasswordModal").addClass("-opening");
-	window.setTimeout(function() {
-		$("body").addClass("no-scroll");
-		$("#lostPasswordModal").addClass("-open");
-		$("#lostPasswordModal").removeClass("-opening");
-	}, 600);
-}
 
 var closeModal = function() {
 	$(".modal").addClass("-closing");
@@ -150,20 +142,6 @@ $(document).ready(function() {
 			isModalOpen = true;
 		}
 	});
-	$(".open-pseudoExist-modal").click(function(event) {
-		event.preventDefault();
-		if(isModalOpen) {
-			closeModal();
-			window.setTimeout(function() {
-				openPseudoExistModal();
-				isModalOpen = true;
-			}, 350);
-		}
-		else {
-			openPseudoExistModal();
-			isModalOpen = true;
-		}
-	});
 
 	$(".close-modal").click(function(event) {
 		event.preventDefault();
@@ -208,6 +186,7 @@ function upvote(id){
 }
 function reloadDiv(data){
 	document.getElementById('affQ').innerHTML = data;
+
 }
 function reloadDivTchat(data){
 	document.getElementById('tchat').innerHTML = data;
