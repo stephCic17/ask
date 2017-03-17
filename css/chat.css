@@ -14,12 +14,12 @@
 	margin: 0;
 }
 
-.hour{
+.hour {
 	color: rgb(164,164,164);
 	font-size: 0.9em;
 }
 
-.tchatArea input{
+.tchatArea input {
 	display: inline-block;
 	width: 80%;
 	background-colorr: #000000;
@@ -30,8 +30,15 @@
 
 #tchatForm input { margin-bottom: 0;}
 
-.msg{
-	padding: 10px;
+.msg {
+	margin: 10px;
+	position: relative;
+	border-bottom: 1px solid rgb(240,240,240);
+}
+
+.msg .hour {
+	position: absolute;
+	right: 0;
 }
 
 @media screen and (max-width: 640px) {

@@ -26,14 +26,16 @@
 }
 
 .question i {
-	padding: 10px 0 0 11px;
+	padding: 10px 0 0 4px;
 	text-align: center;
 	font-size: 1.9rem;
+	display: block;
 }
 
 .question p {
 	margin-left: 51px;
 	margin-top: -15px;
+	opacity: 0.5;
 }
 
 .question .upvote {
@@ -44,6 +46,10 @@
 	height: 40px;
 	border-radius: 100%;
 	background-color: rgb(240, 240, 240);
+}
+
+.question .upvote i {
+	padding: 10px 0 0 8px;
 }
 
 .question-button { flex-shrink: 6; }
