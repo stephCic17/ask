@@ -6,10 +6,13 @@
 }
 
 .chat-wrapper .chat {
-	max-height: 325px;
+	max-height: 317px;
 	overflow : auto;
 }
 
+.chat-wrapper .chat button {
+	margin: 0;
+}
 
 .hour{
 	color: rgb(164,164,164);
