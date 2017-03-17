@@ -39,10 +39,14 @@
 	font-size: 6rem!important;
 	top: 23px!important;
 	left: 26px!important;
+	opacity:0.5!important;
 }
 .message h5 {
 	margin-left:90px!important;
 }
 .message form{
 	margin-left:90px!important;
+}
+.message form input{
+	min-width: 250px;
 }

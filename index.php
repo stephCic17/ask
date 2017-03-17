@@ -217,7 +217,7 @@ session_start();
 							<i class="icon -bubble-heart"></i>
 							<h5>Posez votre question</h5>
 							<form method="post" action="#">
-								<div class="merge -horizontal -large">
+								<div class="merge -horizontal">
 									<input name="question" type=”text" placeholder="Ton texte..." />
 									<button type="submit" class="button -primary -only-icon question-button">
 										Entrer
