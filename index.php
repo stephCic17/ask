@@ -189,7 +189,7 @@ session_start();
 									</div>
 								</form>
 							</div>
-						<?php } else echo "<button class='button -large open-login-modal'> Connectez-vous pour acceder au tchat</button>"; ?>
+						<?php } else echo "<button class='button -primary -large open-login-modal'> Connectez-vous pour acceder au tchat</button>"; ?>
 			</div>
 			<!-- END OF CHAT WRAPPER -->
 
@@ -208,7 +208,7 @@ session_start();
 								<textarea name="question"></textarea>
 								<input type="submit" value="enter"/>
 							</form>
-						</div><?php } else echo "<button class='button -large open-login-modal'> Connectez-vous pour poser votre question</button>";
+						</div><?php } else echo "<button class='button -primary -large open-login-modal'> Connectez-vous pour poser votre question</button>";
 							  ?>
 				</div>
 			</div>
