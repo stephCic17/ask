@@ -25,3 +25,7 @@
 .question h4 {
 	margin-left: 25px;
 }
+
+.question .upvote {
+	float: right;
+}
