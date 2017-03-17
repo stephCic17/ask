@@ -132,10 +132,6 @@ session_start();
 							<i class="icon -user"></i>
 							<input name="email" type="text" placeholder="Email" />
 						</fieldset>
-						<fieldset class="-large -has-icon">
-							<i class="icon -lock"></i>
-							<input name="password" type="password" placeholder="Mot de passe" />
-						</fieldset>
 						<button type="submit" class="button -large -primary">
 							<span>Envoyer !</span>
 						</button>

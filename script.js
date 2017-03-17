@@ -42,12 +42,12 @@ $(function(){
 	})
 });
 
-function interval(){
+function interval() {
 	getMessage();
 	getQuestion();
 }
 
-function getMessage(){
+function getMessage() {
 	$.post(url, {action:"getMessage", lastid:lastid}, function(data){
 		if(data.erreur=="ok"){
 			reloadDivTchat(data.result);
@@ -55,61 +55,95 @@ function getMessage(){
 	},"json");
 }
 
+var isModalOpen = false;
+
+var openLoginModal = function() {
+	$("#loginModal").addClass("-opening");
+	window.setTimeout(function() {
+		$("body").addClass("no-scroll");
+		$("#loginModal").addClass("-open");
+		$("#loginModal").removeClass("-opening");
+	}, 600);
+}
+
+var openSubscribeModal = function() {
+	$("#subscribeModal").addClass("-opening");
+	window.setTimeout(function() {
+		$("body").addClass("no-scroll");
+		$("#subscribeModal").addClass("-open");
+		$("#subscribeModal").removeClass("-opening");
+	}, 600);
+}
+
+var openLostPasswordModal = function() {
+	$("#lostPasswordModal").addClass("-opening");
+	window.setTimeout(function() {
+		$("body").addClass("no-scroll");
+		$("#lostPasswordModal").addClass("-open");
+		$("#lostPasswordModal").removeClass("-opening");
+	}, 600);
+}
+
+var closeModal = function() {
+	$(".modal").addClass("-closing");
+	window.setTimeout(function() {
+		$(".modal").removeClass("-open");
+		$(".modal").removeClass("-closing");
+		$("body").removeClass("no-scroll");
+	}, 350);
+}
+
 $(document).ready(function(){
 
 	$(".open-login-modal").click(function(event) {
 		event.preventDefault();
-		console.log("loginmodalopen");
-		$("#loginModal").addClass("-opening");
-		window.setTimeout(function() {
-
-			$("body").addClass("no-scroll");
-			$("#loginModal").addClass("-open");
-			$("#loginModal").removeClass("-opening");
-
-		}, 600);
-
+		if(isModalOpen) {
+			closeModal();
+			window.setTimeout(function() {
+				openLoginModal();
+				isModalOpen = true;
+			}, 350);
+		}
+		else {
+			openLoginModal();
+			isModalOpen = true;
+		}
 	});
 
 	$(".open-subscribe-modal").click(function(event) {
 		event.preventDefault();
-		console.log("subscribemodalopen");
-		$("#subscribeModal").addClass("-opening");
-		window.setTimeout(function() {
-
-			$("body").addClass("no-scroll");
-			$("#subscribeModal").addClass("-open");
-			$("#subscribeModal").removeClass("-opening");
-
-		}, 600);
-
+		if(isModalOpen) {
+			closeModal();
+			window.setTimeout(function() {
+				openSubscribeModal();
+				isModalOpen = true;
+			}, 350);
+		}
+		else {
+			openSubscribeModal();
+			isModalOpen = true;
+		}
 	});
 
 	$(".open-lostpassword-modal").click(function(event) {
 		event.preventDefault();
-		console.log("lostpasswordmodalopen");
-		$("#lostPasswordModal").addClass("-opening");
-		window.setTimeout(function() {
-
-			$("body").addClass("no-scroll");
-			$("#lostPasswordModal").addClass("-open");
-			$("#lostPasswordModal").removeClass("-opening");
-
-		}, 600);
-
+		if(isModalOpen) {
+			closeModal();
+			window.setTimeout(function() {
+				openLostPasswordModal();
+				isModalOpen = true;
+			}, 350);
+		}
+		else {
+			openLostPasswordModal();
+			isModalOpen = true;
+		}
 	});
 
-	$(".close-modal").click(function() {
-		console.log("close");
-		$(".modal").addClass("-closing");
-		window.setTimeout(function() {
-
-			$(".modal").removeClass("-open");
-			$(".modal").removeClass("-closing");
-			$("body").removeClass("no-scroll");
-
-		}, 350);
-
+	$(".close-modal").click(function(event) {
+		event.preventDefault();
+		isModalOpen = false;
+		closeModal();
 	});
 
 });
