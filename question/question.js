@@ -9,6 +9,7 @@ function upvote(id){
 	}, "json");
 	return false;
 }
+
 function reloadDiv(data){
 	document.getElementById('affQ').innerHTML = data;
 
