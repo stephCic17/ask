@@ -161,6 +161,11 @@ session_start();
 					<!-- VIDEO WRAPPER -->
 					<div id="videoWrapper">
 						<iframe width="560" height="349" src="https://www.youtube.com/embed/txcWDy_3xS8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+						<figure id="noLiveActive" class="filter -blur -example">
+				      <figcaption>
+				        <h6 class="title">Title</h6>
+				      </figcaption>
+				    </figure>
 					</div>
 					<!-- END OF VIDEO WRAPPER -->
 
