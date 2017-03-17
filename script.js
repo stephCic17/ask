@@ -88,12 +88,12 @@ $(document).ready(function(){
 	$(".open-lostpassword-modal").click(function(event) {
 		event.preventDefault();
 		console.log("lostpasswordmodalopen");
-		$("#lostPassordModal").addClass("-opening");
+		$("#lostPasswordModal").addClass("-opening");
 		window.setTimeout(function() {
 
 			$("body").addClass("no-scroll");
-			$("#lostPassordModal").addClass("-open");
-			$("#lostPassordModal").removeClass("-opening");
+			$("#lostPasswordModal").addClass("-open");
+			$("#lostPasswordModal").removeClass("-opening");
 
 		}, 600);
 
