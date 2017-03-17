@@ -213,7 +213,8 @@ session_start();
 					</div>
 					<script>getQuestion();</script>
 					<?php if ($_SESSION["id"]){?>
-						<div class="message -line-primary" id="questionForm">
+						<div class="message -with-intent -line-primary" id="questionForm">
+							<i class="icon -bubble-heart"></i>
 							<h5>Posez votre question</h5>
 							<form method="post" action="#">
 								<div class="merge -horizontal -large">
