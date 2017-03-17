@@ -14,3 +14,7 @@
 .question {
 	border-bottom: 1px solid rgb(245,245,245);
 }
+
+.question .state {
+	float:left;
+}
