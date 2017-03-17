@@ -211,12 +211,16 @@ session_start();
 					</h6>
 					<div id="affQ">
 					</div>
-<script>getQuestion();</script>
+					<script>getQuestion();</script>
 					<?php if ($_SESSION["id"]){?>
 						<div id="questionForm">
 							<form method="post" action="#">
-								<textarea name="question"></textarea>
-								<input type="submit" value="enter"/>
+								<div class="merge -horizontal -large">
+									<input name="question" type=”text" placeholder="Ton texte..." />
+									<button type="submit" class="button -primary -only-icon question-button">
+										Entrer
+									</button>
+								</div>
 							</form>
 						</div><?php } else echo "<button class='button -primary -large open-login-modal'> Connectez-vous pour poser votre question</button>";
 							  ?>
