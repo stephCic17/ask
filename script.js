@@ -93,7 +93,10 @@ var closeModal = function() {
 	}, 350);
 }
 
-$(document).ready(function(){
+$(document).ready(function() {
+
+	var x = document.getElementById('tchat');
+	x.scrollTop = x.scrollHeight;
 
 	$(".open-login-modal").click(function(event) {
 		event.preventDefault();
