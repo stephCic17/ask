@@ -1,52 +1,172 @@
+<?php
+
+include "connexion.php";
+include "tchat/tchat.php";
+include "user/Users.php";
+include "question/Questions.php";
+include "footer.php";
+
+session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"/>
-<head>
-  <meta http-equiv="Content-Type" content="text/html"/>
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="css/popup.css" type="text/css" media="screen" />
-  <script type="text/javascript" src="ressources/jquery.js"></script>
-  <script type="text/javascript" src="script.js"></script>
-  <script type="text/javascript">
-  </script>
-</head>
-<body id="body">
-  <div class="popupConnect">
-	<div class="p">
-	  <h2>Se Connecter</h2>
-	  <form method="post" action="user/login.php">
-		<p><input type="text" name="pseudo" placeholder="pseudo"/></p>
-		<p><input type="password" name="password" placeholder="password"/>
-		<p><input type="submit" value="ok"></p>
-	  </form>
+	<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<meta http-equiv="Content-Type" content="text/html"/>
+
+	<title>Ciconia</title>
+	<meta name="author" content="Ciconia"/>
+	<meta name="description" content="Ciconia est une application calendrier de grossesse personnalisé"/>
+	<meta name="keywords" content="grossesse, timeline"/>
+
+	<link rel="icon" href="assets/imgs/favicon.ico">
+
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/content.css" type="text/css" />
+	<link rel="stylesheet" href="css/modal.css" type="text/css" />
+	<link rel="stylesheet" href="css/navbar.css" type="text/css" />
+	<link rel="stylesheet" href="css/footer.css" type="text/css" />
+	<link rel="stylesheet" href="css/question.css" type="text/css" />
+	<link rel="stylesheet" href="css/chat.css" type="text/css" />
+	<link rel="stylesheet" href="css/videoWrapper.css" type="text/css" />
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="../script.js"></script>
+
+	</head>
+	<body>
+
+	<!-- POPUP LOGIN -->
+	<div id="loginModal" class="modal login">
+	<div class="overlay close-modal"></div>
+	<div class="content">
+	<div class="card content-wrapper">
+	<div class="close-button close-modal">
+	<i class="icon -cross"></i>
 	</div>
-	<a class="close" onclick="closeConnect()">X</a>
-  </div>
-  <div class="popupInscription">
-	<div class="p">
-	  <h2>S'inscrire</h2>
-	  <form method="post" action="user/create_account.php">
-		<p><input type="text" name="first" placeholder="firstname"></p>
-		<p><input type="text" name="last" placeholder="lastname"></p>
-		<p><input type="email" name="mail" placeholder="mail"></p>
-		<p><input type="text" name="pseudo" placeholder="pseudo"/></p>
-		<p><input type="password" name="password" placeholder="password"/></p>
-		<p><input type="submit" value="ok"></p>
-	  </form>
+	<div>
+	<h5>Se connecter</h5>
+	<form method="post" action="user/login.php">
+	<fieldset class="-large -has-icon">
+	<i class="icon -user"></i>
+	<input name="name" type="text" placeholder="Pseudo" />
+	</fieldset>
+	<fieldset class="-large -has-icon">
+	<i class="icon -lock"></i>
+	<input name="password" type="password" placeholder="Mot de passe" />
+	</fieldset>
+	<button type="submit" class="button -large -primary">
+	<span>Se connecter</span>
+	</button>
+	</form>
+	<footer>
+	<a class="open-subscribe-modal">S'inscrire</a> -
+<a class="open-lostpassword-modal">Mot de passe perdu ?</a>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- END OF POPUP LOGIN -->
+
+<!-- POPUP SUBSCRIBE -->
+<div id="subscribeModal" class="modal login -subscribe">
+<div class="overlay close-modal"></div>
+<div class="content">
+<div class="card content-wrapper">
+<div class="close-button close-modal">
+<i class="icon -cross"></i>
+</div>
+<div>
+<h5>Inscription</h5>
+<div class="two-cols-verticaly-aligned">
+<div class="wrapper">
+<form method="post" action="user/create_account.php">
+<fieldset class="-large -has-icon ">
+<i class="icon -user"></i>
+<input name="pseudo" type="name" placeholder="Pseudo" />
+</fieldset>
+<fieldset class="-large -has-icon ">
+<i class="icon -user"></i>
+<input name="mail" type="name" placeholder="Email" />
+</fieldset>
+<fieldset class="-large -has-icon">
+<i class="icon -lock"></i>
+<input name="password" type="password" placeholder="Mot de passe" />
+</fieldset>
+<button class="button -large -primary">
+<span>S'inscrire</span>
+	</button>
+	</form>
 	</div>
-	<a class="close" onclick="closeInscription()"> X</a>
+	<div class="wrapper why">
+	<img class="image" src="assets/imgs/svg/egg.svg"></img>
+	<label>Pourquoi créer un compte</label>
+	<p>Pendant les emissions de Ciconia, avoir un compte vous permet de réagir en temps réel et de poser des questions à l'avance.</p>
+</div>
+</div>
+<footer>
+<a class="open-login-modal">Se connecter</a> -
+<a class="open-lostpassword-modal">Mot de passe perdu ?</a>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- POPUP SUBSCRIBE -->
+
+<!-- POPUP SENDMAIL ? -->
+<div id="lostPasswordModal" class="modal login">
+<div class="overlay close-modal"></div>
+<div class="content">
+<div class="card content-wrapper">
+<div class="close-button close-modal">
+<i class="icon -cross"></i>
+</div>
+<div>
+<h5>Mot de passe perdu ?</h5>
+<form method="post" action="user/sendMail.php">
+<fieldset class="-large -has-icon">
+<i class="icon -user"></i>
+<input name="email" type="text" placeholder="Email" />
+</fieldset>
+<button type="submit" class="button -large -primary">
+<span>Envoyer !</span>
+</button>
+</form>
+<footer>
+<a class="open-login-modal">Se connecter</a> -
+<a class="open-subscribe-modal">S'inscrire</a>
+	</footer>
+	</div>
+	</div>
+	</div>
+	</div>
+	<!-- END OF POPUP SENDMAIL ? -->
+
+	<!-- NAVIGATION -->
+	<nav id="nav">
+	  <div class="container">
+	    <div class="row">
+	      <div class="twelve col">
+	        <a id="logo" class="pull-left"></a>
+	<?php if (!$_SESSION["pseudo"]){?>
+									<a class="button -round pull-right -line-primary open-subscribe-modal">S'inscrire</a>
+<a class="button -round pull-right -line-primary open-login-modal">Se connecter</a>
+<?php } else { ?>
+<a href="user/disconnect.php" class="button -round pull-right -line-primary pull-right">Se déconnecter</a>
+<?php } ?>
+<a href="#" class="link pull-right">Live</a>
+<a href="/" class="link pull-right">Accueil</a>
+      </div>
+    </div>
   </div>
-  <nav id='nav'>
-	<ul>
-	  <li><a href="" id="logo" ui-sref="nav.home"><img src="assets/imgs/jpg/CiconiaLogo.png" width="150px"/></a></li>
-	  <li><?php if (!$_SESSION["pseudo"]){?><a href="#" onClick="loadInscription()" class="cta touch button half-right -big -round -line-grey-lighten-5">S'inscrire</a><?php } ?></li>
-	  <li><?php if (!$_SESSION["pseudo"]){?><a href="#" onClick="loadConnect()" class="cta touch button half-right -big -round -line-grey-lighten-5">Se Connecter</a><?php }else{?>
-	  <a href="user/disconnect.php"  class="cta touch button half-right -big -round -line-grey-lighten-5">Se Deconnecter</a><?php } ?></li>
-	  <li><a id="link" ui-sref-active="active" class="uppercase center">Live</a></li>
-	  <li><a id="link" ui-sref-active="active" ui-sref="nav.home" class="uppercase center">Accueil</a></li>
-	</ul>
-	</nav>
-	  <div class="containerLegal">
+</nav>
+<!-- END OF NAVIGATION -->
+<div id="content">
+<div class="container">
 	  <div id="legalHeader">
 	  <h1>Mentions légales</h1>
 	</div>
@@ -56,3 +176,4 @@
 	</div>
 	</div
 	</body>
+<?php echo get_footer();?>

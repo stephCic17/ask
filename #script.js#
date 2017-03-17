@@ -11,18 +11,18 @@ $(function(){
 		var message = $("#tchatForm form input").val();
 		var x = document.getElementById('tchat');
 		x.scrollTop = x.scrollHeight;
-
+		var y= document.getElementByClass('tchatArea');
+			y.focus();
 		$.post(url, {action:"addMessage", message:message}, function(data){
-				console.log(data);
 			if(data.erreur == "ok"){
-				console.log(data);
+
 			}
 			else{
 			}
 		},"json");
-	});
+	})
 	$("#questionForm form").submit(function(){
-		var question = $("#questionForm form input").val();
+		var question = $("#questionForm form textarea").val();
 		var z = document.getElementById('affQ');
 		z.scrollTop=z.scrollHeight;
 		$.post(url2, {action:"addQuestion", question:question}, function(data){
@@ -30,18 +30,16 @@ $(function(){
 
 			}
 		},"json");
-	});
+	})
 	$("#UserForm form").submit(function(){
 		var login = $("#UserForm form input").val();
 		$.post(url3, {action:"TestPseudo", login:login}, function(data){
 			if(data.erreur == "ok"){
 			}
 			else{
-				console.log("KO");
 			}
 		},"json");
-	});
-
+	})
 });
 
 function interval() {
@@ -166,22 +164,23 @@ $(document).ready(function() {
 			isModalOpen = true;
 		}
 	});
-
+	
 	$(".close-modal").click(function(event) {
 		event.preventDefault();
 		isModalOpen = false;
 		closeModal();
 	});
+	
 });
 
 
 function getQuestion(){
 	$.post(url2, {action:"getQuestions", lastidQ:lastidQ}, function(data){
-
+		
 		if(data.erreur=="ok"){
 			reloadDiv(data.div);
 		}
-		},"json");
+	},"json");
 	return false;
 }
 
