@@ -2,7 +2,7 @@ var url="tchat/tchatAjax.php";
 var url2 = "question/questionAjax.php"
 var popupActive = 0;
 var url3="user/userAjax.php";
-//var timer2 = setInterval(interval,2000);
+var timer2 = setInterval(interval,2000);
 var lastid=0;
 var lastidQ=0;
 
@@ -171,12 +171,12 @@ function upvote(id){
 		}
 		else if (data.erreur == "id")
 		{
-				if (popupActive == 0){
-		$('.row').fadeOut();
-		$('.popupInscription').fadeIn();
-
-		popupActive = 1;
-	}
+			$("#subscribeModal").addClass("-opening");
+			window.setTimeout(function() {
+				$("body").addClass("no-scroll");
+				$("#subscribeModal").addClass("-open");
+				$("#subscribeModal").removeClass("-opening");
+			}, 600);
 		}
 		else{
 			alert("Vous avez déjà voté pour cette question");
