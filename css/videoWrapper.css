@@ -33,7 +33,9 @@
 #noActiveLive .egg {
   display: block;
   position: absolute;
-  background-image: url('../assets/imgs/svg/egg.svg');
+  width: 50px;
+  height: 50px;
+  background-image: url('../assets/imgs/svg/eggonly.svg');
   bottom: 0;
   left: 0;
 }
