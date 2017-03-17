@@ -37,7 +37,7 @@ session_start();
 	<link rel="stylesheet" href="../css/videoWrapper.css" type="text/css" />
 
 	<script type="text/javascript" src="../ressources/jquery.js"></script>
-	<script type="text/javascript" src="../script.js"></script>
+	<script type="text/javascript" src="user.js"></script>
 	
 </head>
 <body>

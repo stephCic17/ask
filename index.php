@@ -178,7 +178,6 @@ session_start();
 	<!-- END OF POPUP PSEUDO EXIST ? -->
 
 		<!-- NAVIGATION -->
->>>>>>> parent of 89b105a... Revert "s"
 		<nav id="nav">
 			<div class="container">
 				<div class="row">
