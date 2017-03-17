@@ -28,7 +28,7 @@ if ($_POST["action"] == "addUpvote")
 				$i = 0;
 				while ($question[$i]["id"] > 0)
 				{
-					$d["div"] .= "<div id=n".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> votes ".$question[$i++]["upvote"]."</p></div>";
+					$d["div"] .= "<div class=\"question\" id=n".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> votes ".$question[$i++]["upvote"]."</p></div>";
 
 				}
 			}
@@ -45,14 +45,14 @@ if ($_POST["action"] == "getQuestions"){
 	$i = 0;
 	while ($question[$i]["id"] > 0)
 	{
-		$d["div"] .= "<div id=n".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a onclick=\"upvote(".$question[$i++]["id"].")\"><i class=\"icon -check\"
+		$d["div"] .= "<div class=\"question\" id=n".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a onclick=\"upvote(".$question[$i++]["id"].")\"><i class=\"icon -check\"
 ></i></a></h4></div>";
 	}
 	$question = get_all_question(1);
 	$i = 0;
 	while ($question[$i]["id"] > 0)
 	{
-		$d["div"] .= "<div id=n".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"
+		$d["div"] .= "<div class=\"question\" id=n".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"
 ></i></a></h4><p> votes ".$question[$i++]["upvote"]."</p></div>";
 	}
 }
