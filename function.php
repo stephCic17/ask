@@ -19,8 +19,7 @@ function get_footer(){
 				<div class="three col">
 					<h6>Presse</h6>
 					<ul>
-						<li><a href="#"></a>Contactez-nous</li>
-						<li><a href="#"></a></li>
+						<li><a href="#">Contactez-nous</a></li>
 					</ul>
 				</div>
 				<div class="three col">

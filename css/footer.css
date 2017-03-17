@@ -10,8 +10,12 @@
 }
 
 #footer a {
-	opacity: 0.5;
+	opacity: 0.8;
 	color: #05b2b5;
+}
+
+#footer a:hover {
+	opacity: 1;
 }
 
 #footer #logo {
