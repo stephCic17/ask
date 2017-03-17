@@ -32,9 +32,6 @@ session_start();
 	<link rel="stylesheet" href="css/chat.css" type="text/css" />
 	<link rel="stylesheet" href="css/videoWrapper.css" type="text/css" />
 
-	<script type="text/javascript" src="ressources/jquery.js"></script>
-	<script type="text/javascript" src="script.js"></script>
-
 </head>
 <body>
 
@@ -213,7 +210,7 @@ session_start();
 					</div>
 					<script>getQuestion();</script>
 					<?php if ($_SESSION["id"]){?>
-						<div id="questionForm">
+						<div class="message -line-primary" id="questionForm">
 							<h5>Posez votre question</h5>
 							<form method="post" action="#">
 								<div class="merge -horizontal -large">
@@ -228,8 +225,9 @@ session_start();
 				</div>
 			</div>
 			<!-- QUESTION WRAPPER -->
-
 			<?php echo get_footer(); ?>
 		</div>
+		<script type="text/javascript" src="ressources/jquery.js"></script>
+		<script type="text/javascript" src="script.js"></script>
 
 </body>
