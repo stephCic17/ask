@@ -57,7 +57,8 @@ function getMessage(){
 
 $(document).ready(function(){
 
-	$(".open-login-modal").click(function() {
+	$(".open-login-modal").click(function(event) {
+		event.preventDefault();
 		console.log("loginmodalopen");
 		$("#loginModal").addClass("-opening");
 		window.setTimeout(function() {
@@ -70,7 +71,8 @@ $(document).ready(function(){
 
 	});
 
-	$(".open-subscribe-modal").click(function() {
+	$(".open-subscribe-modal").click(function(event) {
+		event.preventDefault();
 		console.log("subscribemodalopen");
 		$("#subscribeModal").addClass("-opening");
 		window.setTimeout(function() {
