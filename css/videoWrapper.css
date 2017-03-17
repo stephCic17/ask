@@ -25,3 +25,15 @@
   top:0;
   left:0;
 }
+
+#noActiveLive h6, #noActiveLive span {
+  left: 25px;
+}
+
+#noActiveLive .egg {
+  display: block;
+  position: absolute;
+  background-image: url('../assets/imgs/svg/egg.svg');
+  bottom: 0;
+  left: 0;
+}
