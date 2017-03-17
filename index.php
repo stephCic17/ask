@@ -51,7 +51,7 @@ session_start();
 					<form method="post" action="user/login.php">
 						<fieldset class="-large -has-icon">
 							<i class="icon -user"></i>
-							<input name="name" type="text" placeholder="Pseudo ou email" />
+							<input name="name" type="text" placeholder="Pseudo" />
 						</fieldset>
 						<fieldset class="-large -has-icon">
 							<i class="icon -lock"></i>
@@ -99,9 +99,14 @@ session_start();
 					<h5>Inscription</h5>
 					<div class="two-cols-verticaly-aligned">
 						<div class="wrapper">
+							<form method="post" action="user/create_account.php">
 							<fieldset class="-large -has-icon ">
 								<i class="icon -user"></i>
-								<input name="name" type="name" placeholder="Email" />
+								<input name="pseudo" type="name" placeholder="Pseudo" />
+							</fieldset>
+							<fieldset class="-large -has-icon ">
+								<i class="icon -user"></i>
+								<input name="mail" type="name" placeholder="Email" />
 							</fieldset>
 							<fieldset class="-large -has-icon">
 								<i class="icon -lock"></i>

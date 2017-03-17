@@ -88,7 +88,7 @@ function get_pseudo_user($id_user){
 	return $password[0];
 }
 
-function insert_user($lastname, $firstname, $mail, $password, $login){
+function insert_user($mail, $password, $login){
 	include '../connexion.php';
 	date_default_timezone_set('UTC');
 	
@@ -96,7 +96,7 @@ function insert_user($lastname, $firstname, $mail, $password, $login){
 	$pass = hash('whirlpool', $date_inscription.$password);
 
 
-	$insert = "INSERT INTO users (lastname, firstname, mail, password, date_inscription, upvote, login) VALUES ('$lastname', '$firstname', '$mail', '$pass', '$date_inscription', '0', '$login')";
+	$insert = "INSERT INTO users (mail, password, date_inscription, upvote, login) VALUES ( '$mail', '$pass', '$date_inscription', '0', '$login')";
 
 	$result = pg_query($dbconnect, $insert);
 
