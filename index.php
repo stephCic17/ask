@@ -62,8 +62,8 @@ session_start();
 						</button>
 					</form>
 					<footer>
-						<a onclick="loadInscriptionConnect()">S'inscrire</a> -
-						<a onclick="sendIdentifiant()">Mot de passe perdu ?</a>
+						<a class="open-subscribe-modal">S'inscrire</a> -
+						<a class="open-lostpassword-modal">Mot de passe perdu ?</a>
 					</footer>
 				</div>
 			</div>
@@ -72,22 +72,6 @@ session_start();
 	<!-- END OF POPUP LOGIN -->
 
 	<!-- POPUP SUBSCRIBE -->
-	<!-- <div class="popupInscription">
-		<div class="p">
-			<h2>S'inscrire</h2>
-			<form method="post" action="user/create_account.php">
-				<p><input type="text" name="first" placeholder="firstname"/></p>
-				<p><input type="text" name="last" placeholder="lastname"/></p>
-				<p><input type="email" name="mail" placeholder="mail"/></p>
-				<p><input type="text" name="pseudo" placeholder="pseudo"/></p>
-				<p><input type="password" name="password" placeholder="password"/></p>
-				<p><input type="submit" value="ok"/></p>
-			</form>
-			<button class="connect" onclick="loadConnectInscription()">Me Connecter</button>
-		</div>
-		<a class="close" onclick="closeInscription()"> X</a>
-	</div> -->
-
 	<div id="subscribeModal" class="modal login -subscribe">
 		<div class="overlay close-modal"></div>
 		<div class="content">
@@ -100,21 +84,22 @@ session_start();
 					<div class="two-cols-verticaly-aligned">
 						<div class="wrapper">
 							<form method="post" action="user/create_account.php">
-							<fieldset class="-large -has-icon ">
-								<i class="icon -user"></i>
-								<input name="pseudo" type="name" placeholder="Pseudo" />
-							</fieldset>
-							<fieldset class="-large -has-icon ">
-								<i class="icon -user"></i>
-								<input name="mail" type="name" placeholder="Email" />
-							</fieldset>
-							<fieldset class="-large -has-icon">
-								<i class="icon -lock"></i>
-								<input name="password" type="password" placeholder="Mot de passe" />
-							</fieldset>
-							<button class="button -large -primary">
-								<span>S'inscrire</span>
-							</button>
+								<fieldset class="-large -has-icon ">
+									<i class="icon -user"></i>
+									<input name="pseudo" type="name" placeholder="Pseudo" />
+								</fieldset>
+								<fieldset class="-large -has-icon ">
+									<i class="icon -user"></i>
+									<input name="mail" type="name" placeholder="Email" />
+								</fieldset>
+								<fieldset class="-large -has-icon">
+									<i class="icon -lock"></i>
+									<input name="password" type="password" placeholder="Mot de passe" />
+								</fieldset>
+								<button class="button -large -primary">
+									<span>S'inscrire</span>
+								</button>
+							</form>
 						</div>
 						<div class="wrapper why">
 							<img class="image" src="assets/imgs/svg/egg.svg"></img>
@@ -123,8 +108,8 @@ session_start();
 						</div>
 					</div>
 					<footer>
-						<a href="">Se connecter</a> -
-						<a href="">Mot de passe perdu ?</a>
+						<a class="open-login-modal">Se connecter</a> -
+						<a class="open-lostpassword-modal">Mot de passe perdu ?</a>
 					</footer>
 				</div>
 			</div>
@@ -133,13 +118,36 @@ session_start();
 	<!-- POPUP SUBSCRIBE -->
 
 	<!-- POPUP SENDMAIL ? -->
-	<!-- <div class="sendIdentifiant">
-		<form method="post" action="user/sendMail.php">
-			<p><input type="email" name="mail" placeholder="email"/></p>
-			<p><input type="submit" value="ok"/></p>
-		</form>
-			<a class="close" onclick="closeSendInscription()">X</a>
-	</div> -->
+	<div id="lostPasswordModal" class="modal login">
+		<div class="overlay close-modal"></div>
+		<div class="content">
+			<div class="card content-wrapper">
+				<div class="close-button close-modal">
+					<i class="icon -cross"></i>
+				</div>
+				<div>
+					<h5>Mot de passe perdu ?</h5>
+					<form method="post" action="user/sendMail.php">
+						<fieldset class="-large -has-icon">
+							<i class="icon -user"></i>
+							<input name="email" type="text" placeholder="Email" />
+						</fieldset>
+						<fieldset class="-large -has-icon">
+							<i class="icon -lock"></i>
+							<input name="password" type="password" placeholder="Mot de passe" />
+						</fieldset>
+						<button type="submit" class="button -large -primary">
+							<span>Envoyer !</span>
+						</button>
+					</form>
+					<footer>
+						<a class="open-login-modal">Se connecter</a> -
+						<a class="open-subscribe-modal">S'inscrire</a>
+					</footer>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- END OF POPUP SENDMAIL ? -->
 
 		<!-- NAVIGATION -->
