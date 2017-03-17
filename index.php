@@ -194,7 +194,7 @@ session_start();
 						QUESTIONS DU LIVE
 					</h6>
 					<div id="affQ">
-						<?php
+						<!-- <?php
 							$question = get_all_question_answer(1);
 							$i = 0;
 							while ($question[$i]["id"] > 0) {
@@ -205,7 +205,7 @@ session_start();
 							while ($question[$i]["id"] > 0) {
 								echo "<div class=\"question\" id=n".$question[$i]["id"]."><h4>".$question[$i]["question"]." <a onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> votes ".$question[$i++]["upvote"]."</p></div>";
 							}
-						?>
+						?> -->
 					</div>
 					<?php if ($_SESSION["id"]){?>
 						<div id="questionForm">
