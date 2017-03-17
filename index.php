@@ -207,6 +207,7 @@ session_start();
 					</h6>
 					<div id="affQ">
 					</div>
+<script>getQuestion();</script>
 					<?php if ($_SESSION["id"]){?>
 						<div id="questionForm">
 							<form method="post" action="#">
