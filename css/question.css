@@ -35,10 +35,10 @@
 .question-button { flex-shrink: 6; }
 
 .message>i {
-	position: absolute;
-	font-size: 6rem;
-	top: 23px;
-	left: 26px;
+	position: absolute!important;
+	font-size: 6rem!important;
+	top: 23px!important;
+	left: 26px!important;
 }
 .message h5 {
 	margin-left:90px!important;
