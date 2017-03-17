@@ -163,7 +163,8 @@ session_start();
 						<iframe width="560" height="349" src="https://www.youtube.com/embed/txcWDy_3xS8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 						<figure id="noActiveLive" class="filter -blur -example">
 				      <figcaption>
-				        <h6 class="title">Title</h6>
+				        <h6 class="title">Pas de live en cours</h6>
+								<span class="desc">On revient bientôt !</span>
 				      </figcaption>
 				    </figure>
 					</div>
