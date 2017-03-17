@@ -62,6 +62,7 @@ $(document).ready(function(){
 		$("#loginModal").addClass("-opening");
 		window.setTimeout(function() {
 
+			$("body").addClass("no-scroll");
 			$("#loginModal").addClass("-open");
 			$("#loginModal").removeClass("-opening");
 
@@ -74,6 +75,7 @@ $(document).ready(function(){
 		$("#subscribeModal").addClass("-opening");
 		window.setTimeout(function() {
 
+			$("body").addClass("no-scroll");
 			$("#subscribeModal").addClass("-open");
 			$("#subscribeModal").removeClass("-opening");
 
@@ -88,6 +90,7 @@ $(document).ready(function(){
 
 			$(".modal").removeClass("-open");
 			$(".modal").removeClass("-closing");
+			$("body").removeClass("no-scroll");
 
 		}, 350);
 
