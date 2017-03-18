@@ -22,18 +22,8 @@ session_start();
 	<meta name="keywords" content="grossesse, timeline"/>
 
 	<link rel="icon" href="assets/imgs/favicon.ico">
-
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	<link rel="stylesheet" href="css/content.css" type="text/css" />
-	<link rel="stylesheet" href="css/modal.css" type="text/css" />
-	<link rel="stylesheet" href="css/navbar.css" type="text/css" />
-	<link rel="stylesheet" href="css/footer.css" type="text/css" />
-	<link rel="stylesheet" href="css/question.css" type="text/css" />
-	<link rel="stylesheet" href="css/chat.css" type="text/css" />
-	<link rel="stylesheet" href="css/videoWrapper.css" type="text/css" />
-
-	<script type="text/javascript" src="jquery.js"></script>
-	<script type="text/javascript" src="../script.js"></script>
+	<script type="text/javascript" src="ressources/jquery.js"></script>
+	<script type="text/javascript" src="navBar.js"></script>
 
 	</head>
 	<body>
@@ -51,13 +41,13 @@ session_start();
 	<form method="post" action="user/login.php">
 	<fieldset class="-large -has-icon">
 	<i class="icon -user"></i>
-	<input name="name" type="text" placeholder="Pseudo" />
+	<input name="name" type="text" placeholder="Pseudo" onblur="test_invalid_pseudo(this)"/>
 	</fieldset>
 	<fieldset class="-large -has-icon">
 	<i class="icon -lock"></i>
 	<input name="password" type="password" placeholder="Mot de passe" />
 	</fieldset>
-	<button type="submit" class="button -large -primary">
+	<button type="submit" id="btn-connect" class="button -large -primary">
 	<span>Se connecter</span>
 	</button>
 	</form>
@@ -86,17 +76,17 @@ session_start();
 <form method="post" action="user/create_account.php">
 <fieldset class="-large -has-icon ">
 <i class="icon -user"></i>
-<input name="pseudo" type="name" placeholder="Pseudo" />
+<input name="pseudo" type="name" placeholder="Pseudo" onblur="test_valid_pseudo(this)" />
 </fieldset>
 <fieldset class="-large -has-icon ">
 <i class="icon -user"></i>
-<input name="mail" type="name" placeholder="Email" />
+<input name="mail" type="name" placeholder="Email" onblur="test_valid_mail(this)"/>
 </fieldset>
 <fieldset class="-large -has-icon">
 <i class="icon -lock"></i>
 <input name="password" type="password" placeholder="Mot de passe" />
 </fieldset>
-<button class="button -large -primary">
+<button id="btn-subscribe" class="button -large -primary">
 <span>S'inscrire</span>
 	</button>
 	</form>
@@ -130,9 +120,9 @@ session_start();
 <form method="post" action="user/sendMail.php">
 <fieldset class="-large -has-icon">
 <i class="icon -user"></i>
-<input name="email" type="text" placeholder="Email" />
+<input name="email" type="text" placeholder="Email" onblur="test_valid_mail_send(this)"/>
 </fieldset>
-<button type="submit" class="button -large -primary">
+<button id="btn-sendMail" type="submit" class="button -large -primary">
 <span>Envoyer !</span>
 </button>
 </form>
@@ -146,27 +136,28 @@ session_start();
 	</div>
 	<!-- END OF POPUP SENDMAIL ? -->
 
+
 	<!-- NAVIGATION -->
 	<nav id="nav">
-	  <div class="container">
-	    <div class="row">
-	      <div class="twelve col">
-	        <a id="logo" class="pull-left"></a>
-	<?php if (!$_SESSION["pseudo"]){?>
-									<a class="button -round pull-right -line-primary open-subscribe-modal">S'inscrire</a>
-<a class="button -round pull-right -line-primary open-login-modal">Se connecter</a>
-<?php } else { ?>
-<a href="user/disconnect.php" class="button -round pull-right -line-primary pull-right">Se déconnecter</a>
-<?php } ?>
-<a href="#" class="link pull-right">Live</a>
-<a href="/" class="link pull-right">Accueil</a>
-      </div>
-    </div>
-  </div>
-</nav>
-<!-- END OF NAVIGATION -->
-<div id="content">
-<div class="container">
+		<div class="container">
+			<div class="row">
+				<div class="twelve col">
+					<a href="https://ciconia.io/ask" id="logo" class="pull-left"></a>
+					<?php if (!$_SESSION["pseudo"]){?>
+						<a class="button -round pull-right -line-primary open-subscribe-modal">S'inscrire</a>
+						<a class="button -round pull-right -line-primary open-login-modal">Se connecter</a>
+					<?php } else { ?>
+						<a href="user/disconnect.php" class="button -round pull-right -line-primary pull-right">Se déconnecter</a>
+					<?php } ?>
+					<a href="#" class="link pull-right">Live</a>
+					<a href="https://ciconia.io" class="link pull-right">Accueil</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- END OF NAVIGATION -->
+	<div id="content">
+		
 	  <div id="legalHeader">
 	  <h1>Mentions légales</h1>
 	</div>
@@ -174,6 +165,16 @@ session_start();
 	  <h3>Article 1</h3>
 	  <p class="articleLegal"></p>
 	</div>
-	</div
-	</body>
+
 <?php echo get_footer();?>
+</div>
+
+</body>
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/content.css" type="text/css" />
+<link rel="stylesheet" href="css/modal.css" type="text/css" />
+<link rel="stylesheet" href="css/navbar.css" type="text/css" />
+<link rel="stylesheet" href="css/footer.css" type="text/css" />
+<link rel="stylesheet" href="css/question.css" type="text/css" />
+<link rel="stylesheet" href="css/chat.css" type="text/css" />
+<link rel="stylesheet" href="css/videoWrapper.css" type="text/css" />

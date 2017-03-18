@@ -41,13 +41,13 @@ session_start();
 					<form method="post" action="user/login.php">
 						<fieldset class="-large -has-icon">
 							<i class="icon -user"></i>
-							<input name="name" type="text" placeholder="Pseudo" />
+							<input name="name" type="text" placeholder="Pseudo" onblur="test_invalid_pseudo(this)"/>
 						</fieldset>
 						<fieldset class="-large -has-icon">
 							<i class="icon -lock"></i>
 							<input name="password" type="password" placeholder="Mot de passe" />
 						</fieldset>
-						<button type="submit" class="button -large -primary">
+						<button type="submit" id="btn-connect" class="button -large -primary">
 							<span>Se connecter</span>
 						</button>
 					</form>
@@ -120,9 +120,9 @@ session_start();
 					<form method="post" action="user/sendMail.php">
 						<fieldset class="-large -has-icon">
 							<i class="icon -user"></i>
-							<input name="email" type="text" placeholder="Email" />
+							<input name="email" type="text" placeholder="Email" onblur="test_valid_mail_send(this)"/>
 						</fieldset>
-						<button type="submit" class="button -large -primary">
+						<button id="btn-sendMail" type="submit" class="button -large -primary">
 							<span>Envoyer !</span>
 						</button>
 					</form>
@@ -150,7 +150,7 @@ session_start();
 							<a href="user/disconnect.php" class="button -round pull-right -line-primary pull-right">Se déconnecter</a>
 						<?php } ?>
 						<a href="#" class="link pull-right">Live</a>
-						<a href="/" class="link pull-right">Accueil</a>
+						<a href="https://ciconia.io" class="link pull-right">Accueil</a>
 					</div>
 				</div>
 			</div>
@@ -176,10 +176,8 @@ session_start();
 				<!-- CHAT WRAPPER -->
 				<div class="chat-wrapper" id="tchatF">
 					<div class="chat" id="tchat">
-						<?php $msg = get_all_message();foreach ($msg as $val) echo $val; ?>
+
 					</div>
-					<!-- <script type="text/javascript"> var x = document.getElementById('tchat');
-						 x.scrollTop = x.scrollHeight; </script> -->
 					<?php if ($_SESSION["id"]){ ?>
 						<div id="tchatForm">
 							<form method="post" action="#">
