@@ -21,3 +21,8 @@
 #footer #logo {
 	margin-top: 0;
 }
+@media screen and (max-width:640px){
+	#mobile {
+		margin-right: 6px;
+	}
+}

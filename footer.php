@@ -9,23 +9,25 @@ function get_footer(){
 					<div id="logo"></div>
 				</div>
 				<div class="three col">
+<div id="mobile">
 					<h6>Réseaux sociaux</h6>
+</div>
 					<ul>
-						<li><a href="#">Google +</a></li>
-						<li><a href="http://twitter.com/peon_actu">Twitter</a></li>
-						<li><a href="http://facebook.com/gopeon">Facebook</a></li>
+						<li><div id="mobile"><a href="#">Google +</a></div></li>
+						<li><div id="mobile"><a href="https://twitter.com/Ciconia14">Twitter</a></div></li>
+						<li><div id="mobile"><a href="http://facebook.com/gopeon">Facebook</a></div></li>
 					</ul>
 				</div>
 				<div class="three col">
-					<h6>Presse</h6>
+					<div id="mobile"><h6>Presse</h6></div>
 					<ul>
-						<li><a href="mailto:contact@ciconia.io">Contactez-nous</a></li>
+						<li><div id="mobile"><a href="mailto:contact@ciconia.io">Contactez-nous</a></div></li>
 					</ul>
 				</div>
 				<div class="three col">
-					<h6>Légal</h6>
+					<div id="mobile"><h6>Légal</h6></div>
 					<ul>
-						<li><a href="legal.php">Mentions-légales</a></li>
+						<li><div id="mobile"><a href="legal.php">Mentions-légales</a></div></li>
 					</ul>
 				</div>
 			</div>
