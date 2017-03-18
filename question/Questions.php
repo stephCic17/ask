@@ -1,5 +1,18 @@
 <?php
 
+function test_flag_video(){
+	include "../connexion.php";
+	include "connexion.php";
+
+	$select = "SELECT flag FROM flag";
+	$result = pg_query($dbconnect, $select);
+	$res = pg_fetch_row($result);
+	if ($res[0] == 0)
+		return 0;
+	else
+		return 1;
+}
+
 function test_upvote($id_q, $id_user){
 	include "../connexion.php";
 	include "connexion.php";

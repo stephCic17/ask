@@ -171,7 +171,7 @@ session_start();
 <div id="content">
 					<?php if ($_SESSION["pseudo"]){
 						echo "<script> document.location.href=\"http://ciconia.io/ask\"</script>";}?>
-					<h1> Pseudo Deja utilise</h1>
+					<h1>Choisissez un autre pseudo</h1>
 					<fieldset class="-large -has-icon">
 						<div id="UserForm">
 							<form method="post" action="#">			

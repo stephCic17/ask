@@ -146,36 +146,6 @@ session_start();
 	</div>
 	<!-- END OF POPUP SENDMAIL ? -->
 
-<<<<<<< HEAD
-	<!-- NAVIGATION -->
-=======
-	<!-- POPUP PSEUDO EXIST ? -->
-	<div id="PseudoExistModal" class="modal pseudo">
-		<div class="overlay close-modal"></div>
-		<div class="content">
-			<div class="card content-wrapper">
-				<div class="close-button close-modal">
-					<i class="icon -cross"></i>
-				</div>
-				<div>
-					<h5>Mot de passe perdu ?</h5>
-					<form method="post" action="#">
-						<fieldset class="-large -has-icon">
-							<i class="icon -user"></i>
-							<input name="login" type="text" placeholder="Pseudo" />
-						</fieldset>
-						<button type="submit" class="button -large -primary">
-							<span>Envoyer !</span>
-						</button>
-					</form>
-					<footer>
-						<a class="open-login-modal">Se connecter</a> -
-					</footer>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- END OF POPUP PSEUDO EXIST ? -->
 
 		<!-- NAVIGATION -->
 		<nav id="nav">
@@ -201,13 +171,15 @@ session_start();
 				<!-- VIDEO WRAPPER -->
 				<div id="videoWrapper">
 					<iframe width="560" height="349" src="https://www.youtube.com/embed/txcWDy_3xS8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+					<?php if (test_flag_video() == 0){ ?>
 					<figure id="noActiveLive" class="filter -blur -example">
 						<figcaption>
 							<div class="egg"></div>
 							<h6 class="title">Pas de live en cours</h6>
-							<span class="desc">On revient bientôt !</span>
+							<span class="desc">Retrouve-nous le 23 mars a 21h !</span>
 				      </figcaption>
 				    </figure>
+					<?php } ?>
 				</div>
 				<!-- END OF VIDEO WRAPPER -->
 				

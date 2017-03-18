@@ -50,7 +50,16 @@ if ($_POST["action"] == "getQuestions") {
 	$i = 0;
 	while ($question[$i]["id"])
 	{
-		$d["div"] .= "<div class=\"question\" id=n".$question[$i]["id"]."><div class=\"circle\"><i class=\"state icon -hourglass\"></i></div><h4>".$question[$i]["question"]." <a class=\"upvote\" onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> Votes ".$question[$i++]["upvote"]."</p></div>";
+		$d["div"] .= "<div class=\"question\" id=n".$question[$i]["id"]."><div class=\"circle\"><i class=\"state icon -hourglass\"></i></div><h4>".$question[$i]["question"];
+		$id_user = $_SESSION["id"];
+		$id = $question[$i]["id"];
+		$select = "SELECT id_up FROM upvotes WHERE id_q='$id' AND id_user='$id_user'";
+		$result = pg_query($dbconnect, $select);
+		$res = pg_fetch_row($result);
+		if ($res[0])
+			$d["div"] .= " <div class=\"upvote\" ><i class=\"icon -heart\"></i></div></h4><p> Votes ".$question[$i++]["upvote"]."</p></div>";
+		else
+			$d["div"] .= " <a class=\"upvote\" onclick=\"upvote(".$question[$i]["id"].")\"><i class=\"icon -chevron-up\"></i></a></h4><p> Votes ".$question[$i++]["upvote"]."</p></div>";
 	}
 }
 echo json_encode($d);
