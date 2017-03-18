@@ -90,7 +90,7 @@ session_start();
 								</fieldset>
 								<fieldset class="-large -has-icon ">
 									<i class="icon -user"></i>
-									<input name="mail" type="name" placeholder="Email" />
+									<input name="mail" type="name" placeholder="Email" onblur="test_valid_mail(this)"/>
 								</fieldset>
 								<fieldset class="-large -has-icon">
 									<i class="icon -lock"></i>

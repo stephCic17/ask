@@ -213,3 +213,37 @@ function reloadDiv(data){
 function reloadDivTchat(data){
 	document.getElementById('tchat').innerHTML = data;
 }
+
+function test_valid_mail(champ){
+
+	var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	// regex alternative : /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/
+	if(!regex.test(champ.value))
+	{
+		surligne(champ, true);
+		return false;
+	}
+	surligne(champ, false);
+	return true;
+}
+function test_valid_pseudo(champ){
+
+	var regex = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,8}$/;
+	if(!regex.test(champ.value))
+	{
+		surligne(champ, true);
+		return false;
+	}
+	else
+	{
+		surligne(champ, false);
+		return true;
+	}
+}
+function surligne(champ, erreur)
+{
+	if(erreur)
+		champ.style.backgroundColor = "#fba";
+	else
+		champ.style.backgroundColor = "";
+}
