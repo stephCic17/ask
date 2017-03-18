@@ -5,20 +5,14 @@ var url3="user/userAjax.php";
 var timer2 = setInterval(interval,2000);
 var lastid=0;
 var lastidQ=0;
+var login = "";
 
 $(function(){
 	$("#tchatForm form").submit(function(){
 		var message = $("#tchatForm form input").val();
 		var x = document.getElementById('tchat');
 		x.scrollTop = x.scrollHeight;
-
 		$.post(url, {action:"addMessage", message:message}, function(data){
-				console.log(data);
-			if(data.erreur == "ok"){
-				console.log(data);
-			}
-			else{
-			}
 		},"json");
 	});
 	$("#questionForm form").submit(function(){
@@ -26,22 +20,14 @@ $(function(){
 		var z = document.getElementById('affQ');
 		z.scrollTop=z.scrollHeight;
 		$.post(url2, {action:"addQuestion", question:question}, function(data){
-			if(data.erreur == "ok"){
-
-			}
 		},"json");
 	});
 	$("#UserForm form").submit(function(){
 		var login = $("#UserForm form input").val();
 		$.post(url3, {action:"TestPseudo", login:login}, function(data){
-			if(data.erreur == "ok"){
-			}
-			else{
-				console.log("KO");
-			}
 		},"json");
 	});
-
+	
 });
 
 function interval() {
@@ -217,7 +203,6 @@ function reloadDivTchat(data){
 function test_valid_mail(champ){
 
 	var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	// regex alternative : /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/
 	if(!regex.test(champ.value))
 	{
 		surligne(champ, true);
@@ -226,24 +211,43 @@ function test_valid_mail(champ){
 	surligne(champ, false);
 	return true;
 }
-function test_valid_pseudo(champ){
-
-	var regex = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,8}$/;
-	if(!regex.test(champ.value))
-	{
-		surligne(champ, true);
-		return false;
-	}
-	else
-	{
-		surligne(champ, false);
-		return true;
-	}
+function test_valid_pseudo(pseudo){
+	login = pseudo.value;
+	$.post(url3, {action:"TestPseudoInput", login:login}, function(data){
+		if(data.erreur == "ok"){
+			pseudo.style.backgroundColor = "";
+			$("#btn-subscribe").removeClass("-disabled");
+		}
+		else {
+			pseudo.style.backgroundColor = "#fba";
+			$("#btn-subscribe").addClass("-disabled");
+		}
+	},"json");
 }
+
+function test_valid_name(pseudo){
+	login = pseudo;
+	$.post(url3, {action:"TestPseudoInput", login:login}, function(data){
+		if(data.erreur == "ok"){
+			pseudo.style.backgroundColor = "";
+			$("#btn-subscribe").removeClass("-disabled");
+		}
+		else {
+			pseudo.style.backgroundColor = "#fba";
+			$("#btn-subscribe").addClass("-disabled");
+		}
+	},"json");
+}
+
 function surligne(champ, erreur)
 {
-	if(erreur)
+	if(erreur){
 		champ.style.backgroundColor = "#fba";
+		$("#btn-subscribe").addClass("-disabled");
+	}
 	else
+	{
 		champ.style.backgroundColor = "";
+		test_valid_pseudo_name(login);
+	}
 }

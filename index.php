@@ -22,16 +22,6 @@ session_start();
 	<meta name="keywords" content="grossesse, timeline"/>
 
 	<link rel="icon" href="assets/imgs/favicon.ico">
-
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	<link rel="stylesheet" href="css/content.css" type="text/css" />
-	<link rel="stylesheet" href="css/modal.css" type="text/css" />
-	<link rel="stylesheet" href="css/navbar.css" type="text/css" />
-	<link rel="stylesheet" href="css/footer.css" type="text/css" />
-	<link rel="stylesheet" href="css/question.css" type="text/css" />
-	<link rel="stylesheet" href="css/chat.css" type="text/css" />
-	<link rel="stylesheet" href="css/videoWrapper.css" type="text/css" />
-
 	<script type="text/javascript" src="ressources/jquery.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 
@@ -86,7 +76,7 @@ session_start();
 							<form method="post" action="user/create_account.php">
 								<fieldset class="-large -has-icon ">
 									<i class="icon -user"></i>
-									<input name="pseudo" type="name" placeholder="Pseudo" />
+									<input name="pseudo" type="name" placeholder="Pseudo" onblur="test_valid_pseudo(this)" />
 								</fieldset>
 								<fieldset class="-large -has-icon ">
 									<i class="icon -user"></i>
@@ -96,7 +86,7 @@ session_start();
 									<i class="icon -lock"></i>
 									<input name="password" type="password" placeholder="Mot de passe" />
 								</fieldset>
-								<button class="button -large -primary">
+								<button id="btn-subscribe" class="button -large -primary">
 									<span>S'inscrire</span>
 								</button>
 							</form>
@@ -236,13 +226,20 @@ session_start();
 		</div>
 
 </body>
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/content.css" type="text/css" />
+	<link rel="stylesheet" href="css/modal.css" type="text/css" />
+	<link rel="stylesheet" href="css/navbar.css" type="text/css" />
+	<link rel="stylesheet" href="css/footer.css" type="text/css" />
+	<link rel="stylesheet" href="css/question.css" type="text/css" />
+	<link rel="stylesheet" href="css/chat.css" type="text/css" />
+	<link rel="stylesheet" href="css/videoWrapper.css" type="text/css" />
+
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-							 ga('create', 'UA-93939676-1', 'auto');
-ga('send', 'pageview');
-
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+						  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ ga('create', 'UA-93939676-1', 'auto');
+ ga('send', 'pageview'); 
 </script>

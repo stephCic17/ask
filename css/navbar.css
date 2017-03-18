@@ -1,50 +1,21 @@
+#logo {	width: 125px; height: 30px;	background-image: url('../assets/imgs/svg/logo.svg'); background-repeat: no-repeat; transition: all 200ms ease; opacity:0.8; margin-top: 25px; }
 
-#logo {
-	width: 125px;
-	height: 30px;
-	background-image: url('../assets/imgs/svg/logo.svg');
-  background-repeat: no-repeat;
-	transition: all 200ms ease;
-	opacity:0.8;
-	margin-top: 25px;
-}
+#logo:hover { opacity:1; }
 
-#logo:hover {
-  opacity:1;
-}
+#nav { height: 80px; width: 100%; background-color: white; z-index: 998; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); }
 
-
-#nav {
-	height: 80px;
-	width: 100%;
-	background-color: white;
-	z-index: 998;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-#nav .link {
-  text-decoration: none;
-  margin-top: 29px;
-  opacity:0.8;
-  transition: all 200ms ease;
-  margin-right: 15px;
-}
+#nav .link { text-decoration: none; margin-top: 29px; opacity:0.8; transition: all 200ms ease; margin-right: 15px; }
 
 #nav .link:hover 	{ outline: 0; text-decoration: none; opacity:1; }
+
 #nav .link:active 	{ outline: 0;}
+
 #nav .link:visited 	{ color: #424242; }
-#nav .link:focus	 	{ outline: 0;  }
 
-#nav .button {
-  margin-top: 22px;
-}
+#nav .link:focus	{ outline: 0;  }
 
-#nav .button:nth-child(2) {
-  margin-right:0;
-}
+#nav .button {  margin-top: 22px; }
 
-@media (min-width: 10px) and (max-width: 450px) {
-	#logo {
-    display: none;
-  }
-}
+#nav .button:nth-child(2) {  margin-right:0; }
+
+@media (min-width: 10px) and (max-width: 450px) { #logo { display: none; } }

@@ -14,9 +14,14 @@ if ($_POST["action"] == "TestPseudo"){
 		$_SESSION["id"] = get_id_user($pseudo);
 	}
 	else
-		$d["erreur"] ="KO";
+		$d["erreur"] = "KO";
 }
 
-
+if ($_POST["action"] == "TestPseudoInput"){
+	if (test_pseudo($login) == 0)
+		$d["erreur"] = "ok";
+	else
+		$d["erreur"] = "KO";
+}
 echo json_encode($d);
 ?>
