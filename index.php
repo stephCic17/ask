@@ -175,7 +175,7 @@ session_start();
 						<figcaption>
 							<div class="egg"></div>
 							<h6 class="title">Pas de live en cours</h6>
-							<span class="desc">Retrouve-nous le 23 mars a 21h !</span>
+							<span class="desc">Retrouve-nous le 23 mars a 21h ! Sur le theme de l'accouchement</span>
 				      </figcaption>
 				    </figure>
 					<?php } ?>
@@ -231,7 +231,6 @@ session_start();
 			<!-- QUESTION WRAPPER -->
 			<?php echo get_footer(); ?>
 		</div>
-
 </body>
 <script>
  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

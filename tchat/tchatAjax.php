@@ -22,7 +22,7 @@ if ($_POST["action"] == "getMessage"){
 	$i = 0;
 	$data = array();
 	while(($msg = pg_fetch_row($res)) && $i < 42){
-		$data[$i++] .= '<div class="msg"><b>'.get_pseudo_user($msg[1]).'</b> <p class="hour"> '.get_hour($msg[3]).'</p><p class="tchatP">'.$msg[2].'</p></div>';
+		$data[$i++] .= '<div class="msg"><b>'.get_pseudo_user($msg[1]).' </b><p class="hour"> '.get_hour($msg[3]).'</p><p class="tchatP">'.$msg[2].'</p></div>';
 	}
 	$i = count($data)-1;
 	$j = 0;
