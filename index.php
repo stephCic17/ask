@@ -24,6 +24,15 @@ session_start();
 	<link rel="icon" href="assets/imgs/favicon.ico">
 	<script type="text/javascript" src="ressources/jquery.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/content.css" type="text/css" />
+	<link rel="stylesheet" href="css/modal.css" type="text/css" />
+	<link rel="stylesheet" href="css/navbar.css" type="text/css" />
+	<link rel="stylesheet" href="css/footer.css" type="text/css" />
+	<link rel="stylesheet" href="css/question.css" type="text/css" />
+	<link rel="stylesheet" href="css/chat.css" type="text/css" />
+	<link rel="stylesheet" href="css/videoWrapper.css" type="text/css" />
+
 
 </head>
 <body>
@@ -176,7 +185,7 @@ session_start();
 				<!-- CHAT WRAPPER -->
 				<div class="chat-wrapper" id="tchatF">
 					<div class="chat" id="tchat">
-
+						<script>getMessage(); </script>
 					</div>
 					<?php if ($_SESSION["id"]){ ?>
 						<div id="tchatForm">
@@ -201,8 +210,8 @@ session_start();
 							QUESTIONS DU LIVE
 						</h6>
 					<div id="affQ">
+						<script>getQuestion();</script>
 					</div>
-					<script>getQuestion();</script>
 					<?php if ($_SESSION["id"]){?>
 						<div class="message -with-intent -line-primary" id="questionForm">
 							<i class="icon -bubble-heart"></i>
@@ -224,15 +233,6 @@ session_start();
 		</div>
 
 </body>
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	<link rel="stylesheet" href="css/content.css" type="text/css" />
-	<link rel="stylesheet" href="css/modal.css" type="text/css" />
-	<link rel="stylesheet" href="css/navbar.css" type="text/css" />
-	<link rel="stylesheet" href="css/footer.css" type="text/css" />
-	<link rel="stylesheet" href="css/question.css" type="text/css" />
-	<link rel="stylesheet" href="css/chat.css" type="text/css" />
-	<link rel="stylesheet" href="css/videoWrapper.css" type="text/css" />
-
 <script>
  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
