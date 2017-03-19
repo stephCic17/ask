@@ -22,7 +22,8 @@ session_start();
 	<meta name="keywords" content="grossesse, timeline"/>
 
 	<link rel="icon" href="assets/imgs/favicon.ico">
-
+	<script type="text/javascript" src="ressources/jquery.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<link rel="stylesheet" href="css/content.css" type="text/css" />
 	<link rel="stylesheet" href="css/modal.css" type="text/css" />
@@ -32,8 +33,6 @@ session_start();
 	<link rel="stylesheet" href="css/chat.css" type="text/css" />
 	<link rel="stylesheet" href="css/videoWrapper.css" type="text/css" />
 
-	<script type="text/javascript" src="ressources/jquery.js"></script>
-	<script type="text/javascript" src="script.js"></script>
 
 </head>
 <body>
@@ -51,13 +50,13 @@ session_start();
 					<form method="post" action="user/login.php">
 						<fieldset class="-large -has-icon">
 							<i class="icon -user"></i>
-							<input name="name" type="text" placeholder="Pseudo" />
+							<input name="name" type="text" placeholder="Pseudo" onblur="test_invalid_pseudo(this)"/>
 						</fieldset>
 						<fieldset class="-large -has-icon">
 							<i class="icon -lock"></i>
 							<input name="password" type="password" placeholder="Mot de passe" />
 						</fieldset>
-						<button type="submit" class="button -large -primary">
+						<button type="submit" id="btn-connect" class="button -large -primary">
 							<span>Se connecter</span>
 						</button>
 					</form>
@@ -86,17 +85,17 @@ session_start();
 							<form method="post" action="user/create_account.php">
 								<fieldset class="-large -has-icon ">
 									<i class="icon -user"></i>
-									<input name="pseudo" type="name" placeholder="Pseudo" />
+									<input name="pseudo" type="name" placeholder="Pseudo" onblur="test_valid_pseudo(this)" />
 								</fieldset>
 								<fieldset class="-large -has-icon ">
 									<i class="icon -user"></i>
-									<input name="mail" type="name" placeholder="Email" />
+									<input name="mail" type="name" placeholder="Email" onblur="test_valid_mail(this)"/>
 								</fieldset>
 								<fieldset class="-large -has-icon">
 									<i class="icon -lock"></i>
 									<input name="password" type="password" placeholder="Mot de passe" />
 								</fieldset>
-								<button class="button -large -primary">
+								<button id="btn-subscribe" class="button -large -primary">
 									<span>S'inscrire</span>
 								</button>
 							</form>
@@ -130,9 +129,9 @@ session_start();
 					<form method="post" action="user/sendMail.php">
 						<fieldset class="-large -has-icon">
 							<i class="icon -user"></i>
-							<input name="email" type="text" placeholder="Email" />
+							<input name="email" type="text" placeholder="Email" onblur="test_valid_mail_send(this)"/>
 						</fieldset>
-						<button type="submit" class="button -large -primary">
+						<button id="btn-sendMail" type="submit" class="button -large -primary">
 							<span>Envoyer !</span>
 						</button>
 					</form>
@@ -160,7 +159,7 @@ session_start();
 							<a href="user/disconnect.php" class="button -round pull-right -line-primary pull-right">Se déconnecter</a>
 						<?php } ?>
 						<a href="#" class="link pull-right">Live</a>
-						<a href="/" class="link pull-right">Accueil</a>
+						<a href="https://ciconia.io" class="link pull-right">Accueil</a>
 					</div>
 				</div>
 			</div>
@@ -186,10 +185,8 @@ session_start();
 				<!-- CHAT WRAPPER -->
 				<div class="chat-wrapper" id="tchatF">
 					<div class="chat" id="tchat">
-						<?php $msg = get_all_message();foreach ($msg as $val) echo $val; ?>
+						<script>getMessage(); </script>
 					</div>
-					<!-- <script type="text/javascript"> var x = document.getElementById('tchat');
-						 x.scrollTop = x.scrollHeight; </script> -->
 					<?php if ($_SESSION["id"]){ ?>
 						<div id="tchatForm">
 							<form method="post" action="#">
@@ -213,8 +210,8 @@ session_start();
 							QUESTIONS DU LIVE
 						</h6>
 					<div id="affQ">
+						<script>getQuestion();</script>
 					</div>
-					<script>getQuestion();</script>
 					<?php if ($_SESSION["id"]){?>
 						<div class="message -with-intent -line-primary" id="questionForm">
 							<i class="icon -bubble-heart"></i>
@@ -237,12 +234,10 @@ session_start();
 
 </body>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-							 ga('create', 'UA-93939676-1', 'auto');
-ga('send', 'pageview');
-
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+						  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ ga('create', 'UA-93939676-1', 'auto');
+ ga('send', 'pageview'); 
 </script>
