@@ -39,6 +39,7 @@
 .msg .hour {
 	position: absolute;
 	right: 0;
+	display:inline-block;
 }
 
 @media screen and (max-width: 640px) {
